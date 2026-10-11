@@ -49,10 +49,41 @@ blockquote footer { margin-top:.8rem; font-size:.85rem; color:var(--muted); }
 .site-footer { background:#fff; color:var(--muted); padding:2.2rem 0 2.8rem; border-top:1px solid var(--line); }
 .site-footer a { color:var(--ink); }
 .fine { font-size:.85rem; }
+.concept-banner { display:flex; justify-content:space-between; gap:1rem; align-items:center; flex-wrap:wrap; padding:.7rem 1.25rem; background:#f8fafc; border-bottom:1px solid #e2e8f0; font-family:"Segoe UI", sans-serif; }
+.concept-badge { display:flex; align-items:center; gap:.55rem; font-size:.82rem; color:#334155; }
+.dot { width:8px; height:8px; border-radius:99px; background:#16a34a; display:inline-block; }
+.concept-by { font-size:12px; color:#64748b; }
+.btn-concept { background:#0f172a; color:#fff; text-decoration:none; border-radius:999px; padding:.45rem .8rem; font-size:.8rem; }
+.menu-toggle { display:none; background:transparent; border:1px solid var(--line); border-radius:8px; padding:.35rem .55rem; }
+body.dir-heavy { background:#121416; color:#f4f1ea; }
+body.dir-heavy .top { background:#121416; }
+body.dir-heavy nav a, body.dir-heavy .brand { color:#f4f1ea; }
+body.dir-heavy h1 { font-family: Impact, "Arial Narrow", sans-serif; text-transform:uppercase; letter-spacing:.02em; }
+body.dir-heavy section h2 { text-transform:uppercase; letter-spacing:.04em; }
+body.dir-precision .hero { min-height:0; grid-template-columns:1.1fr .9fr; background:#fff; }
+body.dir-precision .hero-copy, body.dir-precision .hero-media { grid-area:auto; }
+body.dir-precision .hero-copy { background:#fff; color:#141414; justify-content:center; }
+body.dir-precision .hero-media img { min-height:100%; }
+body.dir-precision h1 { font-family:"Segoe UI", sans-serif; font-weight:640; letter-spacing:-.045em; text-transform:none; max-width:16ch; }
+body.dir-precision .lede, body.dir-precision .kicker { color:#57534e; }
+body.dir-workshop { background:#f3efe6; }
+body.dir-workshop .hero { display:block; min-height:0; background:transparent; }
+body.dir-workshop .hero-media img { min-height:46vh; height:46vh; }
+body.dir-workshop .hero-copy { background:transparent; color:#1c1917; padding:2.2rem 7vw 1rem; }
+body.dir-workshop h1 { font-family:Georgia, serif; font-weight:500; text-transform:none; letter-spacing:-.03em; }
+body.dir-workshop .lede, body.dir-workshop .kicker { color:#57534e; }
+body.dir-signal .hero { min-height:78vh; grid-template-columns:.85fr 1.15fr; background:#f7f8fa; }
+body.dir-signal .hero-media { grid-area:1 / 1; }
+body.dir-signal .hero-copy { grid-area:1 / 2; background:#f7f8fa; color:#141414; justify-content:center; }
+body.dir-signal h1 { font-family:"Segoe UI", sans-serif; font-weight:600; text-transform:none; }
+body.dir-signal .lede, body.dir-signal .kicker { color:#57534e; }
+body.dir-config .hero { min-height:68vh; }
 @media (max-width: 860px) {
   .tool, .cards, .reasons, .gallery, .quotes { grid-template-columns:1fr; }
   .top .wrap { flex-wrap:wrap; padding:.6rem 0; }
-  nav { order:3; width:100%; margin:0; gap:.8rem; }
-  h1 { max-width:none; }
-  .hero-copy { padding:6rem 1.25rem 2.5rem; }
+  nav { display:none; order:3; width:100%; margin:0; gap:.8rem; }
+  nav.is-open { display:flex; }
+  .menu-toggle { display:inline-flex; }
+  body.dir-precision .hero, body.dir-signal .hero { grid-template-columns:1fr; }
+  body.dir-precision .hero-copy, body.dir-signal .hero-copy { grid-area:auto; }
 }
