@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Metal Fabrication South Windsor CT | Atlas Metal Works</title>
+  <meta name="description" content="Atlas Metal Works provides custom metal fabrication in South Windsor, CT. Upload your AutoCAD and FastCAM files online for fast quote processing.">
+  <meta property="og:title" content="Metal Fabrication South Windsor CT | Atlas Metal Works">
+  <meta property="og:description" content="Atlas Metal Works provides custom metal fabrication in South Windsor, CT. Upload your AutoCAD and FastCAM files online for fast quote processing.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="style.css">
+  <style>:root { --accent: #1e3a5f; }</style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Atlas Metal Works, LLC","url":"https://atlasmetalworksllc.com/","description":"Atlas Metal Works provides custom metal fabrication in South Windsor, CT. Upload your AutoCAD and FastCAM files online for fast quote processing."}</script>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="#top">Atlas Metal Works, LLC</a>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#why">Why us</a>
+        <a href="#quote">Quote</a>
+      </nav>
+      <a class="nav-cta" href="#quote">Request a quote</a>
+    </div>
+  </header>
+  <section class="hero" id="top">
+    <div class="hero-copy">
+      <p class="kicker">Atlas Metal Works, LLC</p>
+      <h1>Precision Metal Fabrication in South Windsor, CT</h1>
+      <p class="lede">Streamline your parts procurement with direct AutoCAD and FastCAM file integration, clear capability checks, and responsive fabrication services.</p>
+      <p><a class="btn" href="#quote">Request a quote</a></p>
+    </div>
+    <div class="hero-media"><img src="assets/photo-0.jpg" alt="Stand-in workshop photo"><p class="stock-note">Stand-in photo. Shop photos replace this when the site provides them.</p></div>
+  </section>
+  <section id="about">
+    <div class="wrap about">
+      <h2>About Atlas Metal Works</h2>
+      <p>Located in South Windsor, Connecticut, Atlas Metal Works, LLC delivers custom metal fabrication solutions tailored to your technical requirements. We utilize modern engineering workflows—including direct AutoCAD and FastCAM file intake—to streamline project review, maintain design accuracy, and ensure your parts are fabricated to exact design specifications.</p>
+      <div class="gallery"><figure><img src="assets/photo-1.jpg" alt="Stand-in manufacturing photo"><figcaption class="stock-note">Stand-in photo</figcaption></figure></div>
+    </div>
+  </section>
+  <section id="services">
+    <div class="wrap">
+      <h2>Services</h2>
+      <p class="section-intro">Find the process you need, then send it into the quote builder.</p>
+      <input class="finder" id="finder" type="search" placeholder="Find a process" aria-label="Find a process">
+      <div class="cards" id="service-list"><article class="card" data-service="direct autocad &amp; fastcam quoting">
+        <h3>Direct AutoCAD &amp; FastCAM Quoting</h3>
+        <p>Submit native AutoCAD and FastCAM design files directly into our quoting engine for rapid part assessment and nested production planning.</p>
+      </article><article class="card" data-service="custom metal fabrication">
+        <h3>Custom Metal Fabrication</h3>
+        <p>Comprehensive metal fabrication services serving commercial and industrial clients across South Windsor and regional markets.</p>
+      </article><article class="card" data-service="cad &amp; dwg nesting optimization">
+        <h3>CAD &amp; DWG Nesting Optimization</h3>
+        <p>FastCAM-enabled part nesting and processing designed to maximize material utilization and maintain strict dimensional accuracy.</p>
+      </article></div>
+    </div>
+  </section>
+  <section id="why">
+    <div class="wrap">
+      <h2>Why choose Atlas Metal Works, LLC</h2>
+      <div class="reasons"><article class="reason"><h3>Integrated FastCAM &amp; AutoCAD Intake</h3><p>Bypass manual file conversions by uploading your native CAD files directly into our quoting system.</p></article><article class="reason"><h3>South Windsor, CT Manufacturing</h3><p>A dedicated Connecticut fabrication facility providing regional support, direct communication, and reliable turnaround times.</p></article><article class="reason"><h3>Real-Time Capability Alignment</h3><p>Easily align your drawing specifications with verified in-house processing capabilities before production begins.</p></article></div>
+    </div>
+  </section>
+  <section id="quote">
+    <div class="wrap tool">
+      <div>
+        <h2>Quote builder</h2>
+        <p class="section-intro">Select your fabrication process, material grade, and project quantity to prepare a comprehensive quote request.</p>
+      </div>
+      <form id="quote-form">
+        <label>Process
+          <select id="process" name="process"><option value="Direct AutoCAD &amp; FastCAM Quoting">Direct AutoCAD &amp; FastCAM Quoting</option><option value="Custom Metal Fabrication">Custom Metal Fabrication</option><option value="CAD &amp; DWG Nesting Optimization">CAD &amp; DWG Nesting Optimization</option></select>
+        </label>
+        <label>Material
+          <select id="material" name="material">
+            <option>Aluminum</option>
+            <option>Steel</option>
+            <option>Stainless</option>
+            <option>Plastic</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label>Quantity
+          <input id="quantity" name="quantity" type="number" min="1" value="1">
+        </label>
+        <label>Notes
+          <textarea id="notes" name="notes" rows="4" placeholder="Tolerance, finish, or timing"></textarea>
+        </label>
+        <button class="btn" type="submit">Build quote request</button>
+        <pre class="summary" id="summary">Your request will appear here. Nothing is sent.</pre>
+      </form>
+    </div>
+  </section>
+  
+  
+  <footer class="site-footer">
+    <div class="wrap">
+      <strong>Atlas Metal Works, LLC</strong>
+      <p><a href="https://atlasmetalworksllc.com/">Current website</a></p>
+      <p class="fine">Concept preview. The quote builder prepares a request on this page and does not submit it.</p>
+    </div>
+  </footer>
+  <script>
+    const finder = document.querySelector("#finder");
+    const cards = [...document.querySelectorAll("[data-service]")];
+    finder?.addEventListener("input", () => {
+      const query = finder.value.trim().toLowerCase();
+      for (const card of cards) card.hidden = query.length > 0 && !card.dataset.service.includes(query);
+    });
+    const form = document.querySelector("#quote-form");
+    form?.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const process = document.querySelector("#process").value;
+      const material = document.querySelector("#material").value;
+      const quantity = document.querySelector("#quantity").value;
+      const notes = document.querySelector("#notes").value.trim();
+      document.querySelector("#summary").textContent = [
+        "Atlas Metal Works, LLC" + " quote request",
+        "Process: " + process,
+        "Material: " + material,
+        "Quantity: " + quantity,
+        notes ? "Notes: " + notes : "Notes: none",
+        "This request stays on the page until you send it yourself."
+      ].join("\n");
+    });
+  </script>
+</body>
+</html>
