@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CNC Machining &amp; Assembly | Allied Machining Co.</title>
+  <meta name="description" content="Precision CNC milling, turning, wire EDM, and assembly in Newington, CT. Serving aerospace, defense, and commercial sectors nationwide since 1988.">
+  <meta property="og:title" content="CNC Machining &amp; Assembly | Allied Machining Co.">
+  <meta property="og:description" content="Precision CNC milling, turning, wire EDM, and assembly in Newington, CT. Serving aerospace, defense, and commercial sectors nationwide since 1988.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="style.css">
+  <style>:root { --accent: #1e3a5f; }</style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Allied Machining Co., Inc.","url":"https://alliedmachining.biz/","description":"Precision CNC milling, turning, wire EDM, and assembly in Newington, CT. Serving aerospace, defense, and commercial sectors nationwide since 1988."}</script>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="#top"><img src="assets/logo-0.png" alt="Company logo"></a>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#why">Why us</a>
+        <a href="#quote">Quote</a>
+      </nav>
+      <a class="nav-cta" href="#quote">Request a quote</a>
+    </div>
+  </header>
+  <section class="hero" id="top">
+    <div class="hero-copy">
+      <p class="kicker">Allied Machining Co., Inc.</p>
+      <h1>Precision CNC Machining and Subcontract Assembly</h1>
+      <p class="lede">End-to-end component manufacturing, in-house engineering, and wire EDM for aerospace, defense, and commercial industries nationwide.</p>
+      <p><a class="btn" href="#quote">Request a quote</a></p>
+    </div>
+    <div class="hero-media"><img src="assets/photo-1.jpg" alt="The Cnc Milling Machine Cutting The Tire Mold Part With The Solid Ball End Mill Tool And Coolant Fluid In The Light Blue Scene"></div>
+  </section>
+  <section id="about">
+    <div class="wrap about">
+      <h2>Full-Service Manufacturing in Newington, CT</h2>
+      <p>Established in 1988, Allied Machining Co., Inc. is a woman-owned small business operating from a 10,000-square-foot facility in Newington, Connecticut. We deliver subcontract machining and complete assembly services for demanding applications across aerospace, defense, and commercial markets. From initial design engineering and rapid prototyping to full-scale machining and surface finishing, we provide the in-house capabilities required to bridge the gap from concept to production.</p>
+      <div class="gallery"><figure><img src="assets/photo-2.jpg" alt="Drilling Machine Workpiece"></figure><figure><img src="assets/photo-3.png" alt="facebook.png"></figure><figure><img src="assets/photo-4.png" alt="google.png"></figure></div>
+    </div>
+  </section>
+  <section id="services">
+    <div class="wrap">
+      <h2>Services</h2>
+      <p class="section-intro">Find the process you need, then send it into the quote builder.</p>
+      <input class="finder" id="finder" type="search" placeholder="Find a process" aria-label="Find a process">
+      <div class="cards" id="service-list"><article class="card" data-service="cnc milling &amp; turning">
+        <h3>CNC Milling &amp; Turning</h3>
+        <p>Precision milling and turning operations capable of handling complex component geometries while adhering to strict tolerances and drawing specifications.</p>
+      </article><article class="card" data-service="wire edm &amp; manual machining">
+        <h3>Wire EDM &amp; Manual Machining</h3>
+        <p>Specialized wire electrical discharge machining and manual machining services designed for intricate geometries, hardened materials, and custom parts.</p>
+      </article><article class="card" data-service="in-house engineering &amp; prototyping">
+        <h3>In-House Engineering &amp; Prototyping</h3>
+        <p>Design-engineering support including CAD mockups, design iterations, R&amp;D, and rapid prototyping to validate component manufacturability before production.</p>
+      </article><article class="card" data-service="assembly, coating &amp; finishing">
+        <h3>Assembly, Coating &amp; Finishing</h3>
+        <p>Complete turnkey manufacturing value with multi-component assembly, coating, and finishing services ready for immediate deployment.</p>
+      </article></div>
+    </div>
+  </section>
+  <section id="why">
+    <div class="wrap">
+      <h2>Why choose Allied Machining Co., Inc.</h2>
+      <div class="reasons"><article class="reason"><h3>Established Defense &amp; Aerospace Experience</h3><p>Operating since 1988, our team brings decades of precision subcontract machining expertise to aerospace, defense, and commercial projects across the country.</p></article><article class="reason"><h3>ISO &amp; AS Compliant Quality System</h3><p>Our quality management system is compliant with current ISO and AS standards, ensuring rigorous process control and component verification at every stage.</p></article><article class="reason"><h3>End-to-End In-House Production</h3><p>From our 10,000-square-foot Newington facility, we manage the entire manufacturing lifecycle from initial engineering and EDM to final assembly and nationwide logistics.</p></article></div>
+    </div>
+  </section>
+  <section id="quote">
+    <div class="wrap tool">
+      <div>
+        <h2>Quote builder</h2>
+        <p class="section-intro">Configure your production requirements by selecting your machining processes, choosing specified materials from the dropdown menu, and entering your part quantities to submit a multi-part RFQ directly to our engineering team.</p>
+      </div>
+      <form id="quote-form">
+        <label>Process
+          <select id="process" name="process"><option value="CNC Milling &amp; Turning">CNC Milling &amp; Turning</option><option value="Wire EDM &amp; Manual Machining">Wire EDM &amp; Manual Machining</option><option value="In-House Engineering &amp; Prototyping">In-House Engineering &amp; Prototyping</option><option value="Assembly, Coating &amp; Finishing">Assembly, Coating &amp; Finishing</option></select>
+        </label>
+        <label>Material
+          <select id="material" name="material">
+            <option>Aluminum</option>
+            <option>Steel</option>
+            <option>Stainless</option>
+            <option>Plastic</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label>Quantity
+          <input id="quantity" name="quantity" type="number" min="1" value="1">
+        </label>
+        <label>Notes
+          <textarea id="notes" name="notes" rows="4" placeholder="Tolerance, finish, or timing"></textarea>
+        </label>
+        <button class="btn" type="submit">Build quote request</button>
+        <pre class="summary" id="summary">Your request will appear here. Nothing is sent.</pre>
+      </form>
+    </div>
+  </section>
+  
+  
+  <footer class="site-footer">
+    <div class="wrap">
+      <strong>Allied Machining Co., Inc.</strong>
+      <p><a href="https://alliedmachining.biz/">Current website</a></p>
+      <p class="fine">Concept preview. The quote builder prepares a request on this page and does not submit it.</p>
+    </div>
+  </footer>
+  <script>
+    const finder = document.querySelector("#finder");
+    const cards = [...document.querySelectorAll("[data-service]")];
+    finder?.addEventListener("input", () => {
+      const query = finder.value.trim().toLowerCase();
+      for (const card of cards) card.hidden = query.length > 0 && !card.dataset.service.includes(query);
+    });
+    const form = document.querySelector("#quote-form");
+    form?.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const process = document.querySelector("#process").value;
+      const material = document.querySelector("#material").value;
+      const quantity = document.querySelector("#quantity").value;
+      const notes = document.querySelector("#notes").value.trim();
+      document.querySelector("#summary").textContent = [
+        "Allied Machining Co., Inc." + " quote request",
+        "Process: " + process,
+        "Material: " + material,
+        "Quantity: " + quantity,
+        notes ? "Notes: " + notes : "Notes: none",
+        "This request stays on the page until you send it yourself."
+      ].join("\n");
+    });
+  </script>
+</body>
+</html>
