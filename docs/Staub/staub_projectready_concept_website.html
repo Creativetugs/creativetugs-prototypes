@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Staub Manufacturing Solutions | ProjectReady™ Smart Intake Concept</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --staub-blue: #0076b8;
+    --staub-blue-dark: #005688;
+    --staub-navy: #062c40;
+    --staub-orange: #f58220;
+    --staub-orange-hover: #e06d0b;
+    --staub-dark: #26343d;
+    --staub-gray-bg: #f3f5f6;
+    --staub-border: #dce2e5;
+  }
+  body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--staub-dark);
+    background-color: #ffffff;
+  }
+  h1, h2, h3, .font-heading {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.02em;
+  }
+  .btn-orange {
+    background-color: var(--staub-orange);
+    color: white;
+    transition: all 0.2s ease;
+  }
+  .btn-orange:hover {
+    background-color: var(--staub-orange-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(245, 130, 32, 0.35);
+  }
+  .btn-blue {
+    background-color: var(--staub-blue);
+    color: white;
+    transition: all 0.2s ease;
+  }
+  .btn-blue:hover {
+    background-color: var(--staub-blue-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 118, 184, 0.35);
+  }
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+  /* Pulse glow effect for key interactive elements */
+  @keyframes subtle-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(245, 130, 32, 0.4); }
+    50% { box-shadow: 0 0 0 10px rgba(245, 130, 32, 0); }
+  }
+  .pulse-active {
+    animation: subtle-pulse 2s infinite;
+  }
+</style>
+</head>
+<body class="bg-gray-50 text-slate-800 antialiased selection:bg-orange-500 selection:text-white">
+
+<!-- Navigation Bar -->
+<header class="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    <!-- Brand Logo -->
+    <a href="#" class="flex items-center gap-3">
+      <img src="https://staubmfg.com/wp-content/uploads/2018/09/staub-logo-300x62.png" alt="Staub Manufacturing Solutions" class="h-10 sm:h-12 w-auto object-contain">
+    </a>
+
+    <!-- Desktop Nav Links -->
+    <nav class="hidden md:flex items-center space-x-6 text-xs font-bold uppercase tracking-wider text-slate-700">
+      <a href="#capabilities" class="hover:text-[var(--staub-blue)] transition-colors">Capabilities</a>
+      <a href="#projectready" class="hover:text-[var(--staub-blue)] transition-colors text-[var(--staub-orange)] flex items-center gap-1">
+        <span class="w-2 h-2 rounded-full bg-[var(--staub-orange)] inline-block animate-ping"></span>
+        ProjectReady™
+      </a>
+      <a href="#about" class="hover:text-[var(--staub-blue)] transition-colors">About</a>
+      <a href="#quality" class="hover:text-[var(--staub-blue)] transition-colors">Quality</a>
+      <a href="#faq" class="hover:text-[var(--staub-blue)] transition-colors">FAQ</a>
+    </nav>
+
+    <!-- Phone Callout & Primary CTA -->
+    <div class="flex items-center space-x-4">
+      <div class="hidden lg:block text-right">
+        <span class="block text-[10px] font-bold text-gray-400 uppercase tracking-widest">Call Our Team</span>
+        <a href="tel:9378904486" class="text-xs font-black text-[var(--staub-navy)] hover:text-[var(--staub-orange)] transition-colors">
+          (937) 890-4486
+        </a>
+      </div>
+      <a href="#projectready" class="btn-orange px-5 py-2.5 text-xs font-bold uppercase tracking-wider rounded shadow-sm inline-flex items-center gap-2">
+        <span>Start Project</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="relative bg-[var(--staub-navy)] text-white overflow-hidden py-16 lg:py-24">
+  <div class="absolute inset-0 z-0 opacity-20 bg-cover bg-center" style="background-image: url('https://staubmfg.com/wp-content/uploads/2024/04/finished-parts-scaled.jpg'); filter: grayscale(100%);"></div>
+  <div class="absolute inset-0 bg-gradient-to-r from-[var(--staub-navy)] via-[var(--staub-navy)]/90 to-transparent z-0"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7 space-y-6 text-left">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--staub-orange)]/20 border border-[var(--staub-orange)]/40 text-[var(--staub-orange)] text-xs font-bold uppercase tracking-widest">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          Smart Manufacturing Engine
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold uppercase leading-none tracking-tight">
+          THE METAL FABRICATION SUPPLIER <span class="text-[var(--staub-orange)]">YOU CAN COUNT ON</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-slate-300 font-light max-w-2xl">
+          Medium to high-volume production of fabricated components, complex weldments, and complete product assemblies delivered on time.
+        </p>
+
+        <!-- CTA Action Bar -->
+        <div class="flex flex-col sm:flex-row gap-4 pt-4">
+          <a href="#projectready" class="btn-orange px-8 py-4 text-sm font-bold uppercase tracking-wider rounded text-center flex items-center justify-center gap-3 shadow-lg">
+            <span>Launch ProjectReady™ Tool</span>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </a>
+          <a href="#capabilities" class="border border-slate-500 hover:border-white text-white px-6 py-4 text-sm font-bold uppercase tracking-wider rounded text-center transition-colors">
+            Explore Capabilities
+          </a>
+        </div>
+      </div>
+
+      <!-- Live Configurator Teaser Card -->
+      <div class="lg:col-span-5">
+        <div class="bg-slate-900/90 border border-slate-700/80 rounded-xl p-6 backdrop-blur-md shadow-2xl relative overflow-hidden">
+          <div class="absolute -top-10 -right-10 w-32 h-32 bg-[var(--staub-orange)]/20 rounded-full blur-2xl"></div>
+          
+          <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-4">
+            <span class="text-xs font-bold uppercase text-[var(--staub-orange)] tracking-widest flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> Instant Intake Concept
+            </span>
+            <span class="text-[10px] text-slate-400 font-mono">STB-CAD v2.4</span>
+          </div>
+
+          <h3 class="font-heading text-xl uppercase font-bold text-white mb-2">Zero Friction RFQ Process</h3>
+          <p class="text-xs text-slate-400 mb-6">Skip endless back-and-forth email chains. Configure your part spec, get immediate geometry analysis, and request accurate production quotes in under 2 minutes.</p>
+
+          <div class="grid grid-cols-3 gap-3 text-center mb-6">
+            <div class="bg-slate-800/80 p-3 rounded border border-slate-700">
+              <div class="text-lg font-bold font-heading text-[var(--staub-blue)]">99.4%</div>
+              <div class="text-[9px] uppercase text-slate-400 font-semibold">On-Time Delivery</div>
+            </div>
+            <div class="bg-slate-800/80 p-3 rounded border border-slate-700">
+              <div class="text-lg font-bold font-heading text-[var(--staub-orange)]">ISO 9001</div>
+              <div class="text-[9px] uppercase text-slate-400 font-semibold">Certified Quality</div>
+            </div>
+            <div class="bg-slate-800/80 p-3 rounded border border-slate-700">
+              <div class="text-lg font-bold font-heading text-green-400">&lt; 24h</div>
+              <div class="text-[9px] uppercase text-slate-400 font-semibold">Response Time</div>
+            </div>
+          </div>
+
+          <a href="#projectready" class="block w-full py-3 bg-[var(--staub-blue)] hover:bg-[var(--staub-blue-dark)] text-white text-xs font-bold uppercase tracking-wider text-center rounded transition-all">
+            Interactive CAD & Spec Studio
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Value Proposition Band -->
+<section class="bg-[var(--staub-blue)] text-white py-6 border-y border-blue-600">
+  <div class="max-w-7xl mx-auto px-4 text-center font-heading text-base sm:text-lg font-semibold uppercase tracking-wider flex flex-wrap items-center justify-center gap-6">
+    <span>Medium to High-Volume Production</span>
+    <span class="text-[var(--staub-orange)] hidden sm:inline">•</span>
+    <span>Fiber Laser Cutting</span>
+    <span class="text-[var(--staub-orange)] hidden sm:inline">•</span>
+    <span>Robotic Welding</span>
+    <span class="text-[var(--staub-orange)] hidden sm:inline">•</span>
+    <span>Precision Bending</span>
+  </div>
+</section>
+
+<section class="py-16 bg-white" id="about">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <h2 class="text-3xl sm:text-4xl font-extrabold uppercase text-[var(--staub-navy)]">
+        METAL FABRICATION SOURCING WITH <span class="text-[var(--staub-orange)]">STAUB</span> IS EASY AS...
+      </h2>
+      <div class="w-16 h-1 bg-[var(--staub-orange)] mx-auto mt-3"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Step 1 -->
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-8 text-center hover:border-[var(--staub-blue)] transition-all hover:shadow-lg relative group">
+        <div class="w-16 h-16 rounded-full bg-blue-100 text-[var(--staub-blue)] font-heading text-2xl font-bold flex items-center justify-center mx-auto mb-6 group-hover:bg-[var(--staub-blue)] group-hover:text-white transition-colors">
+          1
+        </div>
+        <h3 class="font-heading text-xl uppercase font-bold text-[var(--staub-navy)] mb-3">Reach Out</h3>
+        <p class="text-sm text-slate-600 leading-relaxed">
+          Contact us or submit your specs via ProjectReady™. Our knowledgeable engineering sales team connects immediately to review your requirements.
+        </p>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-8 text-center hover:border-[var(--staub-blue)] transition-all hover:shadow-lg relative group">
+        <div class="w-16 h-16 rounded-full bg-orange-100 text-[var(--staub-orange)] font-heading text-2xl font-bold flex items-center justify-center mx-auto mb-6 group-hover:bg-[var(--staub-orange)] group-hover:text-white transition-colors">
+          2
+        </div>
+        <h3 class="font-heading text-xl uppercase font-bold text-[var(--staub-navy)] mb-3">Receive a Solution</h3>
+        <p class="text-sm text-slate-600 leading-relaxed">
+          We work closely with your engineering team to craft an optimized production strategy that hits your target deadlines, budget, and quality tolerances.
+        </p>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-8 text-center hover:border-[var(--staub-blue)] transition-all hover:shadow-lg relative group">
+        <div class="w-16 h-16 rounded-full bg-blue-100 text-[var(--staub-navy)] font-heading text-2xl font-bold flex items-center justify-center mx-auto mb-6 group-hover:bg-[var(--staub-navy)] group-hover:text-white transition-colors">
+          3
+        </div>
+        <h3 class="font-heading text-xl uppercase font-bold text-[var(--staub-navy)] mb-3">Relax (We've Got This)</h3>
+        <p class="text-sm text-slate-600 leading-relaxed">
+          Experience true "Order it and Forget it" manufacturing. Count on zero delays, automated quality tracking, and hassle-free delivery.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INNOVATIVE PROJECTREADY SMART INTAKE TOOL SECTION -->
+<section id="projectready" class="py-20 bg-slate-900 text-white relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--staub-orange)]/20 border border-[var(--staub-orange)] text-[var(--staub-orange)] text-xs font-bold uppercase tracking-widest mb-3">
+        Interactive Intake Concept
+      </div>
+      <h2 class="text-3xl sm:text-5xl font-extrabold uppercase tracking-tight">
+        STAUB <span class="text-[var(--staub-orange)]">PROJECTREADY™</span> STUDIO
+      </h2>
+      <p class="text-slate-400 text-sm sm:text-base mt-2">
+        Specify your project parameters, preview real-time 3D CAD geometry, and generate an immediate production intake summary.
+      </p>
+    </div>
+
+    <!-- Main Workspace Matrix Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- Left Column: Step Form Controls (7 cols) -->
+      <div class="lg:col-span-7 bg-slate-800/90 border border-slate-700 rounded-2xl p-6 sm:p-8 shadow-2xl backdrop-blur">
+        
+        <!-- Interactive Step Indicator -->
+        <div class="flex items-center justify-between mb-8 pb-6 border-b border-slate-700/80">
+          <div class="flex items-center space-x-3">
+            <button id="step1-btn" onclick="goToStep(1)" class="w-9 h-9 rounded-full bg-[var(--staub-orange)] text-white font-bold font-heading text-sm flex items-center justify-center ring-4 ring-[var(--staub-orange)]/30">1</button>
+            <div class="h-1 w-8 bg-slate-700 rounded" id="line1"></div>
+            <button id="step2-btn" onclick="goToStep(2)" class="w-9 h-9 rounded-full bg-slate-700 text-slate-300 font-bold font-heading text-sm flex items-center justify-center">2</button>
+            <div class="h-1 w-8 bg-slate-700 rounded" id="line2"></div>
+            <button id="step3-btn" onclick="goToStep(3)" class="w-9 h-9 rounded-full bg-slate-700 text-slate-300 font-bold font-heading text-sm flex items-center justify-center">3</button>
+          </div>
+          <span id="step-title-badge" class="text-xs font-bold uppercase text-[var(--staub-orange)] tracking-wider">Step 1: Process & Material</span>
+        </div>
+
+        <!-- Form Panel Container -->
+        <form id="projectForm" onsubmit="event.preventDefault();">
+          
+          <!-- STEP 1: Process Selection & Material Config -->
+          <div id="step-pane-1" class="space-y-6">
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-3">
+                1. Select Required Manufacturing Operations *
+              </label>
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="servicesGrid">
+                <!-- Dynamically clickable service pills -->
+                <button type="button" data-service="Laser Cutting" onclick="toggleService(this)" class="service-pill p-3 rounded-lg border border-slate-700 bg-slate-900/60 text-slate-300 hover:border-[var(--staub-orange)] text-xs font-bold text-left transition-all flex flex-col justify-between h-20 active-pill">
+                  <span class="text-base">⚡</span>
+                  <span>Laser Cutting</span>
+                </button>
+                <button type="button" data-service="Press Brake Forming" onclick="toggleService(this)" class="service-pill p-3 rounded-lg border border-slate-700 bg-slate-900/60 text-slate-300 hover:border-[var(--staub-orange)] text-xs font-bold text-left transition-all flex flex-col justify-between h-20">
+                  <span class="text-base">📐</span>
+                  <span>Press Brake Bending</span>
+                </button>
+                <button type="button" data-service="Welding & Assembly" onclick="toggleService(this)" class="service-pill p-3 rounded-lg border border-slate-700 bg-slate-900/60 text-slate-300 hover:border-[var(--staub-orange)] text-xs font-bold text-left transition-all flex flex-col justify-between h-20">
+                  <span class="text-base">👨‍🏭</span>
+                  <span>Robotic/MIG Welding</span>
+                </button>
+                <button type="button" data-service="Powder Coating" onclick="toggleService(this)" class="service-pill p-3 rounded-lg border border-slate-700 bg-slate-900/60 text-slate-300 hover:border-[var(--staub-orange)] text-xs font-bold text-left transition-all flex flex-col justify-between h-20">
+                  <span class="text-base">🎨</span>
+                  <span>Powder Coating</span>
+                </button>
+                <button type="button" data-service="Hardware Insertion" onclick="toggleService(this)" class="service-pill p-3 rounded-lg border border-slate-700 bg-slate-900/60 text-slate-300 hover:border-[var(--staub-orange)] text-xs font-bold text-left transition-all flex flex-col justify-between h-20">
+                  <span class="text-base">🔩</span>
+                  <span>PEM Hardware</span>
+                </button>
+                <button type="button" data-service="Full Turnkey Assembly" onclick="toggleService(this)" class="service-pill p-3 rounded-lg border border-slate-700 bg-slate-900/60 text-slate-300 hover:border-[var(--staub-orange)] text-xs font-bold text-left transition-all flex flex-col justify-between h-20">
+                  <span class="text-base">📦</span>
+                  <span>Complete Assembly</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Material Selection & Gauge Specs -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2" for="materialSelect">Material Alloy *</label>
+                <select id="materialSelect" onchange="update3DModel(); updateEstimates();" class="w-full bg-slate-900 border border-slate-700 rounded p-3 text-sm text-white focus:outline-none focus:border-[var(--staub-orange)]">
+                  <option value="Carbon Steel (A36/1008)">Carbon Steel (A36 / Cold Rolled)</option>
+                  <option value="Stainless Steel (304/316)">Stainless Steel (304 / 316L)</option>
+                  <option value="Aluminum (5052/6061)">Aluminum (5052-H32 / 6061-T6)</option>
+                  <option value="Galvanized Steel">Galvanized Steel</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2" for="gaugeSelect">Thickness / Gauge *</label>
+                <select id="gaugeSelect" onchange="update3DModel(); updateEstimates();" class="w-full bg-slate-900 border border-slate-700 rounded p-3 text-sm text-white focus:outline-none focus:border-[var(--staub-orange)]">
+                  <option value="16 Gauge (0.060 in / 1.5mm)">16 Gauge (0.060 in / 1.5mm)</option>
+                  <option value="12 Gauge (0.105 in / 2.7mm)" selected>12 Gauge (0.105 in / 2.7mm)</option>
+                  <option value="7 Gauge (0.180 in / 4.5mm)">7 Gauge (0.180 in / 4.5mm)</option>
+                  <option value="1/4 in Plate (0.250 in / 6.3mm)">1/4 in Plate (0.250 in)</option>
+                  <option value="3/8 in Heavy Plate (0.375 in)">3/8 in Heavy Plate</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Dimensions Sliders for Visual CAD Simulation -->
+            <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700/60 space-y-3">
+              <span class="text-xs font-bold uppercase text-slate-400 block tracking-wider">Parametric Visual Model Tweaker</span>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <div class="flex justify-between text-xs text-slate-300 mb-1">
+                    <span>Part Length:</span>
+                    <span id="lengthVal" class="font-mono text-[var(--staub-orange)] font-bold">12.0 in</span>
+                  </div>
+                  <input type="range" id="lengthSlider" min="4" max="36" value="12" oninput="document.getElementById('lengthVal').textContent=this.value+'.0 in'; update3DModel(); updateEstimates();" class="w-full accent-[var(--staub-orange)] bg-slate-700 h-1.5 rounded cursor-pointer">
+                </div>
+                <div>
+                  <div class="flex justify-between text-xs text-slate-300 mb-1">
+                    <span>Part Width:</span>
+                    <span id="widthVal" class="font-mono text-[var(--staub-orange)] font-bold">8.0 in</span>
+                  </div>
+                  <input type="range" id="widthSlider" min="4" max="24" value="8" oninput="document.getElementById('widthVal').textContent=this.value+'.0 in'; update3DModel(); updateEstimates();" class="w-full accent-[var(--staub-orange)] bg-slate-700 h-1.5 rounded cursor-pointer">
+                </div>
+              </div>
+            </div>
+
+            <div class="flex justify-end pt-4">
+              <button type="button" onclick="goToStep(2)" class="btn-orange px-6 py-3 rounded text-xs font-bold uppercase tracking-wider flex items-center gap-2">
+                <span>Next: Production Volume</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 2: Quantities, Timelines & Drag Drop CAD Analysis -->
+          <div id="step-pane-2" class="space-y-6 hidden">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2" for="quantitySelect">Estimated Production Volume *</label>
+                <select id="quantitySelect" onchange="updateEstimates();" class="w-full bg-slate-900 border border-slate-700 rounded p-3 text-sm text-white focus:outline-none focus:border-[var(--staub-orange)]">
+                  <option value="50 - 250 units (Pilot Run)">50 - 250 units (Pilot Batch)</option>
+                  <option value="250 - 1,000 units (Medium Production)" selected>250 - 1,000 units (Medium Run)</option>
+                  <option value="1,000 - 10,000 units (High Volume)">1,000 - 10,000 units (High Volume)</option>
+                  <option value="10,000+ units / Recurring Contract">10,000+ units (Scheduled Contract)</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2" for="timelineSelect">Target Lead Time *</label>
+                <select id="timelineSelect" class="w-full bg-slate-900 border border-slate-700 rounded p-3 text-sm text-white focus:outline-none focus:border-[var(--staub-orange)]">
+                  <option value="Standard Production (3-4 Weeks)">Standard Lead Time (3-4 Weeks)</option>
+                  <option value="Expedited Fast-Track (1-2 Weeks)">Expedited Fast-Track (1-2 Weeks)</option>
+                  <option value="Scheduled Blanket Purchase Order">Scheduled / Call-off Deliveries</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Drag & Drop CAD Upload Tool -->
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
+                Upload CAD Files or Blueprints (.STEP, .IGS, .DXF, .PDF)
+              </label>
+              <div id="dropZone" onclick="document.getElementById('cadFileInput').click();" class="border-2 border-dashed border-slate-600 hover:border-[var(--staub-orange)] bg-slate-900/50 rounded-xl p-6 text-center cursor-pointer transition-colors group">
+                <input type="file" id="cadFileInput" accept=".step,.stp,.dxf,.dwg,.igs,.pdf,.zip" class="hidden" onchange="handleFileUpload(this.files)">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-[var(--staub-orange)] flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
+                </div>
+                <p class="text-xs text-slate-300 font-semibold mb-1">Click to browse or drag and drop 3D CAD files here</p>
+                <p class="text-[10px] text-slate-500">Supports STEP, IGES, DXF, DWG, PDF up to 50MB</p>
+                
+                <!-- Simulated Upload Status Container -->
+                <div id="uploadStatus" class="hidden mt-4 p-3 bg-slate-800 rounded border border-green-500/40 text-left flex items-center justify-between">
+                  <div class="flex items-center space-x-3">
+                    <span class="text-green-400 font-bold text-sm">✓</span>
+                    <div>
+                      <span id="fileName" class="text-xs font-bold text-slate-200 block">bracket_assembly_revB.step</span>
+                      <span class="text-[10px] text-slate-400">Geometry parsed • Bounding box recognized</span>
+                    </div>
+                  </div>
+                  <span class="text-[10px] bg-green-900/60 text-green-300 px-2 py-0.5 rounded font-mono">PARSED</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Notes field -->
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2" for="projectNotes">Engineering Notes / Critical Tolerances</label>
+              <textarea id="projectNotes" rows="2" placeholder="Mention powder coating color specs, key dimensions, PPAP requirements, or packaging needs..." class="w-full bg-slate-900 border border-slate-700 rounded p-3 text-sm text-white focus:outline-none focus:border-[var(--staub-orange)] placeholder:text-slate-600"></textarea>
+            </div>
+
+            <div class="flex justify-between pt-4">
+              <button type="button" onclick="goToStep(1)" class="px-5 py-2.5 rounded border border-slate-700 text-xs font-bold text-slate-300 hover:bg-slate-700">Back</button>
+              <button type="button" onclick="goToStep(3)" class="btn-orange px-6 py-3 rounded text-xs font-bold uppercase tracking-wider flex items-center gap-2">
+                <span>Next: Finalize Contact</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 3: Business Information & Submission -->
+          <div id="step-pane-3" class="space-y-6 hidden">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1" for="compName">Company Name *</label>
+                <input type="text" id="compName" placeholder="e.g. Acme Industrial Robotics" required class="w-full bg-slate-900 border border-slate-700 rounded p-3 text-sm text-white focus:outline-none focus:border-[var(--staub-orange)]">
+              </div>
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1" for="contactName">Contact Full Name *</label>
+                <input type="text" id="contactName" placeholder="e.g. Sarah Jenkins" required class="w-full bg-slate-900 border border-slate-700 rounded p-3 text-sm text-white focus:outline-none focus:border-[var(--staub-orange)]">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1" for="contactEmail">Work Email *</label>
+                <input type="email" id="contactEmail" placeholder="sarah@acme.com" required class="w-full bg-slate-900 border border-slate-700 rounded p-3 text-sm text-white focus:outline-none focus:border-[var(--staub-orange)]">
+              </div>
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1" for="contactPhone">Phone Number</label>
+                <input type="tel" id="contactPhone" placeholder="(937) 555-0199" class="w-full bg-slate-900 border border-slate-700 rounded p-3 text-sm text-white focus:outline-none focus:border-[var(--staub-orange)]">
+              </div>
+            </div>
+
+            <!-- Summary Copy Engine Box -->
+            <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-700 space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-[var(--staub-orange)] uppercase tracking-wider">ProjectReady™ Specification Summary</span>
+                <button type="button" onclick="copyProjectSummary()" class="text-[10px] bg-slate-800 hover:bg-slate-700 text-white px-3 py-1 rounded font-bold border border-slate-600 transition-colors flex items-center gap-1">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                  <span>Copy Spec Text</span>
+                </button>
+              </div>
+              <textarea id="summaryOutput" readonly rows="5" class="w-full bg-slate-950 font-mono text-[11px] text-slate-300 p-3 rounded border border-slate-800 focus:outline-none custom-scrollbar"></textarea>
+            </div>
+
+            <div id="noticeMsg" class="hidden p-3 bg-green-900/60 border border-green-500 rounded text-xs text-green-200">
+              ✓ <strong>Concept Summary Generated!</strong> Staub's technical sales team receives fully parsed geometries and specs for fast-track quoting.
+            </div>
+
+            <div class="flex justify-between pt-2">
+              <button type="button" onclick="goToStep(2)" class="px-5 py-2.5 rounded border border-slate-700 text-xs font-bold text-slate-300 hover:bg-slate-700">Back</button>
+              <button type="button" onclick="submitProjectInquiry()" class="btn-orange px-8 py-3.5 rounded text-xs font-bold uppercase tracking-wider shadow-xl flex items-center gap-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span>Submit Intake Spec</span>
+              </button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+
+      <!-- Right Column: Interactive 3D Visualizer & Live Spec Matrix (5 cols) -->
+      <div class="lg:col-span-5 space-y-6">
+        
+        <!-- Interactive 3D CAD Canvas Card -->
+        <div class="bg-slate-800/90 border border-slate-700 rounded-2xl p-4 shadow-2xl relative overflow-hidden">
+          <div class="flex items-center justify-between pb-3 mb-2 border-b border-slate-700/60">
+            <div class="flex items-center space-x-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-[var(--staub-orange)]"></span>
+              <span class="text-xs font-bold uppercase tracking-wider text-white">Live Parametric CAD Preview</span>
+            </div>
+            <span class="text-[10px] text-slate-400 font-mono">Interactive WebGL</span>
+          </div>
+
+          <!-- WebGL 3D Viewport -->
+          <div id="cadCanvasContainer" class="w-full h-64 bg-slate-950 rounded-xl relative overflow-hidden border border-slate-800 cursor-grab active:cursor-grabbing">
+            <div class="absolute top-2 right-2 z-10 bg-slate-900/80 text-[10px] text-slate-400 px-2 py-1 rounded border border-slate-800 pointer-events-none">
+              Drag to Rotate 3D
+            </div>
+            <!-- Canvas target -->
+            <canvas id="threeCanvas" class="w-full h-full block"></canvas>
+          </div>
+
+          <!-- Live Engineering Estimates Bar -->
+          <div class="mt-4 grid grid-cols-3 gap-2 bg-slate-900/80 p-3 rounded-xl border border-slate-700/80 text-center">
+            <div>
+              <span class="text-[9px] uppercase font-bold text-slate-400 block">Est. Sheet Weight</span>
+              <span id="estWeight" class="text-xs font-bold font-mono text-[var(--staub-orange)]">2.84 lbs</span>
+            </div>
+            <div>
+              <span class="text-[9px] uppercase font-bold text-slate-400 block">Laser Cut Perimeter</span>
+              <span id="estPerimeter" class="text-xs font-bold font-mono text-white">40.0 in</span>
+            </div>
+            <div>
+              <span class="text-[9px] uppercase font-bold text-slate-400 block">Bends Required</span>
+              <span id="estBends" class="text-xs font-bold font-mono text-cyan-400">2 Flanges</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Staub Value Guarantee Badge -->
+        <div class="bg-gradient-to-br from-[var(--staub-navy)] to-slate-900 border border-[var(--staub-blue)]/40 p-6 rounded-2xl text-left shadow-lg">
+          <div class="flex items-start space-x-4">
+            <div class="p-3 bg-[var(--staub-blue)]/20 rounded-xl text-[var(--staub-orange)] shrink-0">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <div>
+              <h4 class="font-heading text-base font-bold uppercase text-white mb-1">Staub Precision Guarantee</h4>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                ISO 9001:2015 Certified manufacturing with full material lot traceability, automated optical laser measuring, and PPAP level capability.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Production Capabilities Overview Grid -->
+<section class="py-20 bg-slate-50" id="capabilities">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-3xl sm:text-4xl font-extrabold uppercase text-[var(--staub-navy)]">
+        PRODUCTION METAL FABRICATION <span class="text-[var(--staub-orange)]">EXPERTS</span>
+      </h2>
+      <p class="text-sm text-slate-600 mt-2">
+        STAUB is your reliable partner for fabricated components, brackets, mounts, racks, trays, enclosures, frames, and welded assemblies.
+      </p>
+    </div>
+
+    <!-- Capabilities Cards Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Item 1 -->
+      <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+        <div class="w-12 h-12 rounded-lg bg-blue-50 text-[var(--staub-blue)] flex items-center justify-center font-bold text-xl mb-4">
+          ⚡
+        </div>
+        <h3 class="font-heading text-lg font-bold uppercase text-[var(--staub-navy)] mb-2">Fiber Laser Cutting</h3>
+        <p class="text-xs text-slate-600 leading-relaxed">
+          High-speed automated fiber lasers providing precision sheet metal cutouts with clean edges and minimal heat deformation.
+        </p>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+        <div class="w-12 h-12 rounded-lg bg-orange-50 text-[var(--staub-orange)] flex items-center justify-center font-bold text-xl mb-4">
+          📐
+        </div>
+        <h3 class="font-heading text-lg font-bold uppercase text-[var(--staub-navy)] mb-2">CNC Press-Brake Forming</h3>
+        <p class="text-xs text-slate-600 leading-relaxed">
+          Multi-axis CNC press brakes ensure extreme angular repeatability across prototype batches and long production runs.
+        </p>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+        <div class="w-12 h-12 rounded-lg bg-blue-50 text-[var(--staub-blue)] flex items-center justify-center font-bold text-xl mb-4">
+          👨‍🏭
+        </div>
+        <h3 class="font-heading text-lg font-bold uppercase text-[var(--staub-navy)] mb-2">Robotic & MIG/TIG Welding</h3>
+        <p class="text-xs text-slate-600 leading-relaxed">
+          Multi-station robotic welding cells combined with certified manual welders deliver structural integrity and speed.
+        </p>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+        <div class="w-12 h-12 rounded-lg bg-orange-50 text-[var(--staub-orange)] flex items-center justify-center font-bold text-xl mb-4">
+          🎨
+        </div>
+        <h3 class="font-heading text-lg font-bold uppercase text-[var(--staub-navy)] mb-2">Finishing & Assembly</h3>
+        <p class="text-xs text-slate-600 leading-relaxed">
+          In-house powder coating, hardware insertion (PEM), plating, and complete mechanical product assembly services.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Comparison Matrix Section -->
+<section class="py-20 bg-white" id="quality">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <h2 class="text-3xl sm:text-4xl font-extrabold uppercase text-[var(--staub-navy)]">
+        YOU DESERVE <span class="text-[var(--staub-orange)]">BETTER THAN AVERAGE</span>
+      </h2>
+      <p class="text-sm text-slate-600 mt-2">See how Staub Manufacturing Solutions compares against conventional fabrication shops.</p>
+    </div>
+
+    <!-- Responsive Comparison Table -->
+    <div class="overflow-x-auto rounded-xl border border-slate-200 shadow-lg">
+      <table class="w-full text-left text-sm">
+        <thead class="bg-[var(--staub-navy)] text-white uppercase font-heading tracking-wider text-xs">
+          <tr>
+            <th class="p-4 sm:p-5">Fabrication Service / Quality Standard</th>
+            <th class="p-4 sm:p-5 text-center bg-slate-800">Average Fabricator</th>
+            <th class="p-4 sm:p-5 text-center bg-[var(--staub-blue)]">Staub Manufacturing</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-200 font-medium text-slate-700">
+          <tr class="hover:bg-slate-50">
+            <td class="p-4">Automated Fiber Laser Cutting Systems</td>
+            <td class="p-4 text-center text-slate-400">Basic CNC / Plasma</td>
+            <td class="p-4 text-center font-bold text-[var(--staub-orange)] bg-blue-50/50">✓ High-Speed Automated Fiber</td>
+          </tr>
+          <tr class="hover:bg-slate-50">
+            <td class="p-4">CNC Multi-Axis Press Brake Bending</td>
+            <td class="p-4 text-center text-green-600">✓ Standard</td>
+            <td class="p-4 text-center font-bold text-[var(--staub-orange)] bg-blue-50/50">✓ Precision Offline Programmed</td>
+          </tr>
+          <tr class="hover:bg-slate-50">
+            <td class="p-4">Robotic Multi-Station Welding Cells</td>
+            <td class="p-4 text-center text-slate-400">— Manual Only</td>
+            <td class="p-4 text-center font-bold text-[var(--staub-orange)] bg-blue-50/50">✓ Automated Multi-Station</td>
+          </tr>
+          <tr class="hover:bg-slate-50">
+            <td class="p-4">ISO 9001:2015 Quality Management Certified</td>
+            <td class="p-4 text-center text-slate-400">— Rare / Self-compliant</td>
+            <td class="p-4 text-center font-bold text-[var(--staub-orange)] bg-blue-50/50">✓ Certified & Audited</td>
+          </tr>
+          <tr class="hover:bg-slate-50">
+            <td class="p-4">Complete Material Heat & Lot Traceability</td>
+            <td class="p-4 text-center text-slate-400">— Limited</td>
+            <td class="p-4 text-center font-bold text-[var(--staub-orange)] bg-blue-50/50">✓ 100% Traceability Built-In</td>
+          </tr>
+          <tr class="hover:bg-slate-50">
+            <td class="p-4">PPAP Documentation Capable (Level 1-5)</td>
+            <td class="p-4 text-center text-slate-400">— Not Available</td>
+            <td class="p-4 text-center font-bold text-[var(--staub-orange)] bg-blue-50/50">✓ Complete PPAP Support</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Customer Testimonial Quote Banner -->
+<section class="bg-[var(--staub-orange)] text-white py-16 px-4">
+  <div class="max-w-4xl mx-auto text-center space-y-4">
+    <svg class="w-10 h-10 mx-auto text-orange-200/60" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+    <blockquote class="font-heading text-2xl sm:text-3xl font-bold uppercase tracking-tight leading-snug">
+      “FOR YEARS, STAUB HAS BEEN THE GO-TO FOR MANY OF OUR METAL FABRICATION NEEDS. THE QUALITY OF THEIR PRODUCTS AND COMMITMENT TO DELIVERING ON TIME MAKES THEM AN EASY CHOICE FOR US.”
+    </blockquote>
+    <p class="text-xs font-bold uppercase tracking-widest text-orange-100">
+      — Long-Time OEM Manufacturing Client
+    </p>
+  </div>
+</section>
+
+<!-- Common Sourcing Issues FAQ -->
+<section class="py-20 bg-slate-50" id="faq">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-extrabold uppercase text-[var(--staub-navy)]">
+        HAVING FABRICATION <span class="text-[var(--staub-orange)]">SOURCING ISSUES?</span>
+      </h2>
+      <p class="text-sm text-slate-600 mt-1">If you identify with any of these common supplier headaches, Staub can help.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="bg-white p-4 rounded-lg border border-slate-200 flex items-center space-x-3 shadow-sm">
+        <span class="text-[var(--staub-orange)] font-black text-lg">✓</span>
+        <span class="text-xs font-semibold text-slate-700">Do you constantly have to follow up on late order statuses?</span>
+      </div>
+      <div class="bg-white p-4 rounded-lg border border-slate-200 flex items-center space-x-3 shadow-sm">
+        <span class="text-[var(--staub-orange)] font-black text-lg">✓</span>
+        <span class="text-xs font-semibold text-slate-700">Is a vendor's poor quality hurting your company's reputation?</span>
+      </div>
+      <div class="bg-white p-4 rounded-lg border border-slate-200 flex items-center space-x-3 shadow-sm">
+        <span class="text-[var(--staub-orange)] font-black text-lg">✓</span>
+        <span class="text-xs font-semibold text-slate-700">Are shipments regularly running behind promised delivery dates?</span>
+      </div>
+      <div class="bg-white p-4 rounded-lg border border-slate-200 flex items-center space-x-3 shadow-sm">
+        <span class="text-[var(--staub-orange)] font-black text-lg">✓</span>
+        <span class="text-xs font-semibold text-slate-700">Are costs of delays and internal rework blowing your budget?</span>
+      </div>
+    </div>
+
+    <div class="text-center mt-10">
+      <a href="#projectready" class="btn-blue px-8 py-3.5 rounded text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2">
+        <span>Solve Your Sourcing Problems With ProjectReady™</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="bg-[var(--staub-dark)] text-slate-400 py-12 border-t border-slate-800 text-xs">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 pb-8 border-b border-slate-800">
+      <div class="md:col-span-6 space-y-4">
+        <img src="https://staubmfg.com/wp-content/uploads/2018/09/staub-logo-300x62.png" alt="Staub Manufacturing" class="h-10 bg-white p-1 rounded w-auto">
+        <p class="text-slate-300 leading-relaxed max-w-sm">
+          Staub Manufacturing Solutions<br>
+          251 Thunderbird Dr., Dayton, OH 45414<br>
+          Phone: (937) 890-4486 | Email: info@staubmfg.com
+        </p>
+      </div>
+
+      <div class="md:col-span-6 flex flex-wrap gap-8 justify-start md:justify-end font-bold uppercase tracking-wider text-slate-300">
+        <div class="space-y-2">
+          <div class="text-[var(--staub-orange)] font-black text-[10px]">Navigation</div>
+          <a href="#capabilities" class="block hover:text-white">Capabilities</a>
+          <a href="#projectready" class="block hover:text-white">ProjectReady™</a>
+          <a href="#quality" class="block hover:text-white">Quality Systems</a>
+        </div>
+        <div class="space-y-2">
+          <div class="text-[var(--staub-orange)] font-black text-[10px]">Company</div>
+          <a href="#about" class="block hover:text-white">About Us</a>
+          <a href="#faq" class="block hover:text-white">FAQ</a>
+          <a href="tel:9378904486" class="block hover:text-white">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pt-6 flex flex-col sm:flex-row justify-between items-center text-[10px] text-slate-500">
+      <span>© 2026 Staub Manufacturing Solutions. All rights reserved.</span>
+      <span class="mt-2 sm:mt-0 font-mono">Interactive Concept Engine built for Staub Manufacturing</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* Selected Services Set */
+  const selectedServices = new Set(["Laser Cutting"]);
+
+  /* Step navigation handler */
+  function goToStep(stepNum) {
+    // Hide all step panes
+    document.getElementById('step-pane-1').classList.add('hidden');
+    document.getElementById('step-pane-2').classList.add('hidden');
+    document.getElementById('step-pane-3').classList.add('hidden');
+
+    // Show active pane
+    document.getElementById(`step-pane-${stepNum}`).classList.remove('hidden');
+
+    // Update Indicators
+    const b1 = document.getElementById('step1-btn');
+    const b2 = document.getElementById('step2-btn');
+    const b3 = document.getElementById('step3-btn');
+    const l1 = document.getElementById('line1');
+    const l2 = document.getElementById('line2');
+    const titleBadge = document.getElementById('step-title-badge');
+
+    // Reset base button styles
+    [b1, b2, b3].forEach((btn, idx) => {
+      btn.className = "w-9 h-9 rounded-full font-bold font-heading text-sm flex items-center justify-center transition-all " + 
+        (idx + 1 <= stepNum ? "bg-[var(--staub-orange)] text-white ring-4 ring-[var(--staub-orange)]/30" : "bg-slate-700 text-slate-300");
+    });
+
+    l1.className = "h-1 w-8 rounded " + (stepNum >= 2 ? "bg-[var(--staub-orange)]" : "bg-slate-700");
+    l2.className = "h-1 w-8 rounded " + (stepNum >= 3 ? "bg-[var(--staub-orange)]" : "bg-slate-700");
+
+    if (stepNum === 1) titleBadge.textContent = "Step 1: Process & Material";
+    if (stepNum === 2) titleBadge.textContent = "Step 2: Volume & CAD Files";
+    if (stepNum === 3) {
+      titleBadge.textContent = "Step 3: Review & Intake";
+      generateSummaryText();
+    }
+  }
+
+  /* Toggle service pills */
+  function toggleService(btn) {
+    const serviceName = btn.getAttribute('data-service');
+    if (selectedServices.has(serviceName)) {
+      if (selectedServices.size > 1) {
+        selectedServices.delete(serviceName);
+        btn.classList.remove('border-[var(--staub-orange)]', 'bg-[var(--staub-orange)]/20', 'text-white');
+        btn.classList.add('border-slate-700', 'bg-slate-900/60', 'text-slate-300');
+      }
+    } else {
+      selectedServices.add(serviceName);
+      btn.classList.add('border-[var(--staub-orange)]', 'bg-[var(--staub-orange)]/20', 'text-white');
+      btn.classList.remove('border-slate-700', 'bg-slate-900/60', 'text-slate-300');
+    }
+    updateEstimates();
+  }
+
+  /* File upload simulator */
+  function handleFileUpload(files) {
+    if (files && files.length > 0) {
+      document.getElementById('uploadStatus').classList.remove('hidden');
+      document.getElementById('fileName').textContent = files[0].name;
+      updateEstimates();
+    }
+  }
+
+  /* Dynamic Weight & Spec Calculator */
+  function updateEstimates() {
+    const length = parseFloat(document.getElementById('lengthSlider').value);
+    const width = parseFloat(document.getElementById('widthSlider').value);
+    const mat = document.getElementById('materialSelect').value;
+
+    // Density factor approx (lbs per cu inch)
+    let density = 0.283; // steel
+    if (mat.includes('Aluminum')) density = 0.098;
+    if (mat.includes('Stainless')) density = 0.289;
+
+    const thickVal = 0.105; // 12 gauge default approx
+    const weight = (length * width * thickVal * density).toFixed(2);
+    const perimeter = (2 * (length + width)).toFixed(1);
+
+    document.getElementById('estWeight').textContent = weight + ' lbs';
+    document.getElementById('estPerimeter').textContent = perimeter + ' in';
+  }
+
+  /* Summary Text Generation */
+  function generateSummaryText() {
+    const comp = document.getElementById('compName').value || "[Company Name]";
+    const name = document.getElementById('contactName').value || "[Contact Name]";
+    const email = document.getElementById('contactEmail').value || "[Email]";
+    const phone = document.getElementById('contactPhone').value || "Not provided";
+    const mat = document.getElementById('materialSelect').value;
+    const gauge = document.getElementById('gaugeSelect').value;
+    const qty = document.getElementById('quantitySelect').value;
+    const timeline = document.getElementById('timelineSelect').value;
+    const notes = document.getElementById('projectNotes').value || "None";
+    const services = Array.from(selectedServices).join(", ");
+
+    const summary = `=== STAUB PROJECTREADY™ INTAKE SPEC ===\n` +
+      `CLIENT: ${comp} (${name})\n` +
+      `CONTACT: ${email} | Phone: ${phone}\n` +
+      `---------------------------------------\n` +
+      `SERVICES: ${services}\n` +
+      `MATERIAL: ${mat} (${gauge})\n` +
+      `VOLUME: ${qty}\n` +
+      `TIMELINE: ${timeline}\n` +
+      `DIMENSIONS: ${document.getElementById('lengthSlider').value}" x ${document.getElementById('widthSlider').value}" Sheet\n` +
+      `EST. WEIGHT: ${document.getElementById('estWeight').textContent}\n` +
+      `NOTES: ${notes}\n` +
+      `=======================================`;
+
+    document.getElementById('summaryOutput').value = summary;
+  }
+
+  /* Copy Summary to Clipboard */
+  function copyProjectSummary() {
+    const summaryBox = document.getElementById('summaryOutput');
+    summaryBox.select();
+    try {
+      document.execCommand('copy');
+      alert('ProjectReady™ Specification copied to clipboard!');
+    } catch(err) {
+      console.log('Copy failed');
+    }
+  }
+
+  /* Final Intake Form Submission */
+  function submitProjectInquiry() {
+    const notice = document.getElementById('noticeMsg');
+    notice.classList.remove('hidden');
+    notice.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  /* THREE.JS 3D Visualizer Simulation Engine */
+  let scene, camera, renderer, sheetMetalMesh, foldMeshLeft, foldMeshRight;
+
+  function init3D() {
+    const container = document.getElementById('cadCanvasContainer');
+    const width = container.clientWidth;
+    const height = container.clientHeight;
+
+    scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x020617); // Dark navy slate background
+
+    camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
+    camera.position.set(15, 12, 20);
+    camera.lookAt(0, 0, 0);
+
+    renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('threeCanvas'), antialias: true });
+    renderer.setSize(width, height);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+    // Ambient & Directional Lights
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+    scene.add(ambientLight);
+
+    const dirLight1 = new THREE.DirectionalLight(0xf58220, 1.2); // Orange tint
+    dirLight1.position.set(10, 20, 15);
+    scene.add(dirLight1);
+
+    const dirLight2 = new THREE.DirectionalLight(0x0076b8, 1.0); // Blue fill
+    dirLight2.position.set(-10, -10, -10);
+    scene.add(dirLight2);
+
+    // Grid Floor
+    const gridHelper = new THREE.GridHelper(30, 20, 0x0076b8, 0x1e293b);
+    gridHelper.position.y = -2;
+    scene.add(gridHelper);
+
+    // Create Sheet Metal Geometry Group
+    createSheetMetalGroup();
+
+    // Mouse Interaction for rotation
+    let isDragging = false;
+    let previousMousePosition = { x: 0, y: 0 };
+
+    container.addEventListener('mousedown', () => isDragging = true);
+    container.addEventListener('mouseup', () => isDragging = false);
+    container.addEventListener('mouseleave', () => isDragging = false);
+
+    container.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      const deltaMove = {
+        x: e.clientX - previousMousePosition.x,
+        y: e.clientY - previousMousePosition.y
+      };
+
+      scene.rotation.y += deltaMove.x * 0.01;
+      scene.rotation.x += deltaMove.y * 0.01;
+
+      previousMousePosition = { x: e.clientX, y: e.clientY };
+    });
+
+    container.addEventListener('touchstart', (e) => {
+      isDragging = true;
+      previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+    });
+    container.addEventListener('touchend', () => isDragging = false);
+    container.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      const deltaMove = {
+        x: e.touches[0].clientX - previousMousePosition.x,
+        y: e.touches[0].clientY - previousMousePosition.y
+      };
+
+      scene.rotation.y += deltaMove.x * 0.01;
+      scene.rotation.x += deltaMove.y * 0.01;
+
+      previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+    });
+
+    // Window Resize handling
+    window.addEventListener('resize', onWindowResize);
+
+    // Animation Loop
+    animate();
+  }
+
+  function createSheetMetalGroup() {
+    const l = parseFloat(document.getElementById('lengthSlider').value) * 0.4;
+    const w = parseFloat(document.getElementById('widthSlider').value) * 0.4;
+
+    // Remove existing meshes if any
+    const existingGroup = scene.getObjectByName('sheetGroup');
+    if (existingGroup) scene.remove(existingGroup);
+
+    const sheetGroup = new THREE.Group();
+    sheetGroup.name = 'sheetGroup';
+
+    // Metal Material Styling
+    const material = new THREE.MeshStandardMaterial({
+      color: 0x94a3b8,
+      metalness: 0.8,
+      roughness: 0.3,
+      wireframe: false
+    });
+
+    // Base Sheet
+    const baseGeo = new THREE.BoxGeometry(l, 0.2, w);
+    sheetMetalMesh = new THREE.Mesh(baseGeo, material);
+    sheetGroup.add(sheetMetalMesh);
+
+    // Flange 1 (Bent up)
+    const flangeGeo = new THREE.BoxGeometry(l, 2, 0.2);
+    foldMeshLeft = new THREE.Mesh(flangeGeo, material);
+    foldMeshLeft.position.set(0, 1, w/2);
+    sheetGroup.add(foldMeshLeft);
+
+    // Flange 2 (Bent up opposite)
+    foldMeshRight = new THREE.Mesh(flangeGeo, material);
+    foldMeshRight.position.set(0, 1, -w/2);
+    sheetGroup.add(foldMeshRight);
+
+    // Edge wireframe accent overlay
+    const edges = new THREE.EdgesGeometry(baseGeo);
+    const lineMat = new THREE.LineBasicMaterial({ color: 0xf58220 }); // Staub Orange line accent
+    const wireframe = new THREE.LineSegments(edges, lineMat);
+    sheetGroup.add(wireframe);
+
+    scene.add(sheetGroup);
+  }
+
+  function update3DModel() {
+    createSheetMetalGroup();
+  }
+
+  function onWindowResize() {
+    const container = document.getElementById('cadCanvasContainer');
+    if (!container) return;
+    camera.aspect = container.clientWidth / container.clientHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(container.clientWidth, container.clientHeight);
+  }
+
+  function animate() {
+    requestAnimationFrame(animate);
+    const group = scene.getObjectByName('sheetGroup');
+    if (group) {
+      group.rotation.y += 0.003; // Subtle auto slow turn
+    }
+    renderer.render(scene, camera);
+  }
+
+  // Initialize on load
+  window.onload = function() {
+    init3D();
+    updateEstimates();
+  };
+</script>
+</body>
+</html>
