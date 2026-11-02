@@ -227,7 +227,7 @@ h2 { font-size: clamp(2.4rem, 4vw, 4rem); max-width: 16ch; margin-bottom: 1rem; 
 .finale {
   background:
     linear-gradient(100deg, rgba(13, 34, 48, 0.88), rgba(13, 34, 48, 0.55)),
-    url("https://static.wixstatic.com/media/5d8df4_b214704dd007461daddf2ebd36b00cf7~mv2.jpg") center/cover;
+    url("images/finale.jpg") center/cover;
   color: #fff;
   padding: 7rem 7vw;
 }
