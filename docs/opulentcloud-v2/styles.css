@@ -699,12 +699,53 @@ section { scroll-margin-top: 92px; }
 
 .infra-grid {
   display: grid;
-  grid-template-columns: 0.82fr 1.18fr;
-  gap: 3rem;
+  grid-template-columns: 0.86fr 1.14fr;
+  gap: 4rem;
   align-items: start;
 }
 
-.infra-side { display: grid; gap: 1.4rem; }
+.system {
+  padding: 6.5rem 0;
+  background: white;
+}
+
+.system-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.system p { max-width: 34rem; color: var(--muted); font-size: 1.08rem; }
+
+.system .fabric {
+  height: 440px;
+  background:
+    radial-gradient(280px 180px at 50% 50%, rgba(32, 203, 212, 0.2), transparent 70%),
+    #f3fbfc;
+  border: 1px solid rgba(0, 43, 73, 0.08);
+}
+
+.system .wire { stroke: rgba(12, 124, 138, 0.4); }
+
+.system .fabric[data-active="0"] .wire:nth-child(1),
+.system .fabric[data-active="1"] .wire:nth-child(2),
+.system .fabric[data-active="2"] .wire:nth-child(3),
+.system .fabric[data-active="3"] .wire:nth-child(4) {
+  stroke: #0c7c8a;
+}
+
+.system .hub {
+  background: white;
+  color: var(--navy);
+  border-color: rgba(32, 203, 212, 0.7);
+}
+
+.system .f-node {
+  background: white;
+  color: var(--navy);
+  border-color: rgba(0, 43, 73, 0.12);
+}
 
 .fabric {
   position: relative;
@@ -1544,6 +1585,7 @@ section { scroll-margin-top: 92px; }
   .section-head,
   .approach-grid,
   .human-grid,
+  .system-grid,
   .finale-grid,
   .footer-grid {
     grid-template-columns: 1fr;

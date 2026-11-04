@@ -38,15 +38,26 @@
     bar.style.height = active.offsetHeight + "px";
   }
 
-  function activate(row) {
-    const index = rows.indexOf(row);
-    rows.forEach(function (item) {
-      item.classList.toggle("is-active", item === row);
-    });
+  const notes = [
+    "Infrastructure resources designed to support business applications and demanding workloads.",
+    "Flexible storage environments supporting business data, applications and operational requirements.",
+    "Connected infrastructure designed to support communication and data movement across your environment.",
+    "Technical oversight and ongoing support to help maintain your cloud environment."
+  ];
+  const systemCopy = document.getElementById("systemCopy");
+
+  function showNode(index) {
     nodes.forEach(function (node, i) {
       node.classList.toggle("is-on", i === index);
     });
     if (fabric) fabric.dataset.active = String(index);
+    if (systemCopy) systemCopy.textContent = notes[index];
+  }
+
+  function activate(row) {
+    rows.forEach(function (item) {
+      item.classList.toggle("is-active", item === row);
+    });
     placeBar();
   }
 
@@ -65,17 +76,16 @@
 
   nodes.forEach(function (node) {
     node.addEventListener("click", function () {
-      activate(rows[Number(node.dataset.node)]);
+      showNode(Number(node.dataset.node));
     });
   });
 
-  if (!reduce && rows.length) {
+  if (!reduce && nodes.length) {
     let cursor = 0;
     setInterval(function () {
-      const side = document.querySelector(".infra-side");
-      if (side && side.matches(":hover")) return;
-      cursor = (cursor + 1) % rows.length;
-      activate(rows[cursor]);
+      if (fabric && fabric.matches(":hover")) return;
+      cursor = (cursor + 1) % nodes.length;
+      showNode(cursor);
     }, 3200);
   }
 
