@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Garden store · All Seasons Garden Center</title>
+  <meta name="description" content="Mulch, decorative rock, Red River Valley soil, sod, and delivery in Grand Forks. Calculate yards before you call the truck.">
+  <link rel="icon" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,620&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="topbar">
+    <span>We deliver across Grand Forks and the region</span>
+    <a href="tel:+17017467777">(701) 746-7777</a>
+    <span>Mon–Fri 8–6 · Sat 8–5 · Sun 12–5</span>
+  </div>
+  <header class="nav">
+    <a class="brand" href="index.html"><img src="images/logo.png" alt="All Seasons Garden Center"></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav class="menu" id="menu"><a href="index.html">Home</a><a href="flowers.html">Flowers</a><a href="greenhouse.html">Greenhouse</a><a href="nursery.html">Nursery</a><a href="garden-store.html" aria-current="page">Garden Store</a><a href="about.html">About</a><a href="contact.html">Visit</a></nav>
+    <button class="cart-btn" type="button" data-open-cart>Order <span class="cart-count">0</span></button>
+  </header>
+  <main id="main">
+
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="kicker">Garden store</p>
+        <h1>Mulch, rock, and Red River Valley soil — loaded or bagged.</h1>
+        <p class="lead">Pick it up or have it delivered. A truck holds 8 yards of mulch or soil, and 6 yards of rock. Tools, fertilizer, pottery, seed, and decor fill the store beside the piles.</p>
+      </div>
+    </section>
+    <section class="section" style="padding-top:0">
+      <div class="wrap materials">
+        <div class="material-card">
+          <img src="images/mulch.jpg" alt="Dyed red mulch">
+        </div>
+        <div class="panel">
+          <form data-calc>
+            <p class="kicker">Yard calculator</p>
+            <h2 style="font-size:2rem;margin-bottom:0.8rem">How much do you need?</h2>
+            <div class="calc">
+              <label>Length (ft)<input name="length" type="number" min="1" step="0.1" value="20"></label>
+              <label>Width (ft)<input name="width" type="number" min="1" step="0.1" value="10"></label>
+              <label>Depth
+                <select name="depth">
+                  <option value="2">2 inches</option>
+                  <option value="3" selected>3 inches</option>
+                  <option value="4">4 inches</option>
+                  <option value="6">6 inches</option>
+                </select>
+              </label>
+              <label>Material
+                <select name="material">
+                  <option value="mulch">Mulch</option>
+                  <option value="rock">Rock</option>
+                  <option value="soil">Soil</option>
+                </select>
+              </label>
+            </div>
+            <button class="btn" type="submit" style="margin-top:0.8rem">Calculate</button>
+            <div class="result" data-calc-out><p>A 20 by 10 foot bed at 3 inches is a useful place to start.</p></div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="section" style="padding-top:0">
+      <div class="wrap" style="display:grid;gap:1rem">
+        <article class="panel">
+          <h2 style="font-size:2rem;margin-bottom:0.6rem">Mulch</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Type</th><th>Per yard</th><th>Per bag</th></tr></thead>
+              <tbody>
+                <tr><td>Red Canyon, dyed red</td><td>130 sq ft</td><td>15 sq ft</td></tr>
+                <tr><td>Mink, dyed brown</td><td>130 sq ft</td><td>15 sq ft</td></tr>
+                <tr><td>Cedar</td><td>150 sq ft</td><td>15 sq ft</td></tr>
+                <tr><td>Native</td><td>150 sq ft</td><td>15 sq ft</td></tr>
+                <tr><td>Large bark</td><td>Bags only</td><td>15 sq ft</td></tr>
+                <tr><td>Cypress</td><td>Bags only</td><td>15 sq ft</td></tr>
+                <tr><td>Northern cedar / cypress blend</td><td>Bags only</td><td>15 sq ft</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+        <article class="panel">
+          <h2 style="font-size:2rem;margin-bottom:0.6rem">Rock</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Type</th><th>Per yard</th><th>Per bag</th></tr></thead>
+              <tbody>
+                <tr><td>Black Dresser</td><td>130 sq ft</td><td>4 sq ft</td></tr>
+                <tr><td>Buff Limestone</td><td>130 sq ft</td><td>4 sq ft</td></tr>
+                <tr><td>Mixed Granite</td><td>130 sq ft</td><td>4 sq ft</td></tr>
+                <tr><td>Red Limestone</td><td>130 sq ft</td><td>4 sq ft</td></tr>
+                <tr><td>Western Sunrise</td><td>130 sq ft</td><td>4 sq ft</td></tr>
+                <tr><td>1 1/2" washed native river rock</td><td>130 sq ft</td><td>4 sq ft</td></tr>
+                <tr><td>2–4" washed native</td><td>60 sq ft</td><td>60 sq ft</td></tr>
+                <tr><td>3–6" washed native</td><td>50 sq ft</td><td>—</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="lead" style="margin-top:0.7rem">Sand, Class 13, and 3/4" fractured rock are on the yard too.</p>
+        </article>
+        <article class="panel">
+          <h2 style="font-size:2rem;margin-bottom:0.6rem">Soil &amp; sod</h2>
+          <p class="lead" style="margin-bottom:0.7rem">Field soil, compost, blended soil, and nursery soil cover 27 cubic feet per yard. Sod is 2 by 6.5 feet, 13 square feet a roll. Potting soil comes in 4, 12, and 30 quart bags.</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Depth</th><th>Shortcut</th></tr></thead>
+              <tbody>
+                <tr><td>1 inch</td><td>Square feet ÷ 324 = yards</td></tr>
+                <tr><td>2 inches</td><td>Square feet ÷ 162 = yards</td></tr>
+                <tr><td>3 inches</td><td>Square feet ÷ 108 = yards</td></tr>
+                <tr><td>4 inches</td><td>Square feet ÷ 81 = yards</td></tr>
+                <tr><td>6 inches</td><td>Square feet ÷ 54 = yards</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="section" style="padding-top:0">
+      <div class="wrap three">
+        <article class="info-card"><h3>Garden solutions</h3><p>Fertilizer, tools, and the products the greenhouse staff actually uses on their own benches.</p></article>
+        <article class="info-card"><h3>Pottery &amp; decor</h3><p>Containers in the colors of the season, plus the gift-shop mix of candles, textiles, and porch pieces.</p></article>
+        <article class="info-card"><h3>Garden plots</h3><p>Applications are at the counter. Turn one in and you receive a plot number and a gift card.</p></article>
+      </div>
+    </section>
+    
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <h2>All Seasons Garden Center</h2>
+        <p>5101 S Washington<br>Grand Forks, ND 58201</p>
+        <p style="margin-top:0.6rem"><a href="tel:+17017467777">(701) 746-7777</a><br><a href="mailto:info@allseasonsgardencenter.com">info@allseasonsgardencenter.com</a></p>
+        <form class="newsletter" data-mailto-form data-subject="Newsletter signup">
+          <input name="email" type="email" required placeholder="Email for seasonal notes" aria-label="Email">
+          <button class="btn clay" type="submit">Join</button>
+        </form>
+        <p class="form-note" data-form-note></p>
+      </div>
+      <div>
+        <h2>Shop</h2>
+        <ul>
+          <li><a href="flowers.html">Floral shop</a></li>
+          <li><a href="greenhouse.html">Greenhouse</a></li>
+          <li><a href="nursery.html">Nursery &amp; tree farm</a></li>
+          <li><a href="garden-store.html">Mulch, rock &amp; soil</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Hours</h2>
+        <ul>
+          <li>Monday–Friday · 8am–6pm</li>
+          <li>Saturday · 8am–5pm</li>
+          <li>Sunday · Noon–5pm</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Visit</h2>
+        <ul>
+          <li><a href="contact.html">Map &amp; contact</a></li>
+          <li><a href="about.html">The family &amp; guarantee</a></li>
+          <li><a href="https://www.facebook.com/allseasonsgc" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.instagram.com/allseasonsgf/" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap fine">Family owned in Grand Forks for more than 45 years. Flower requests on this preview are emailed to the shop and confirmed by phone. Payment stays with All Seasons.</div>
+  </footer>
+  <div class="callbar">
+    <a class="btn ghost" href="tel:+17017467777">Call</a>
+    <a class="btn" href="flowers.html">Order flowers</a>
+  </div>
+  <div class="drawer-back" data-close-cart></div>
+  <aside class="drawer" aria-label="Your order">
+    <header>
+      <h2>Your order</h2>
+      <button class="icon-btn" type="button" data-close-cart>Close</button>
+    </header>
+    <div class="drawer-body" data-cart-body></div>
+    <form class="drawer-foot" data-order-form>
+      <div class="subtotal"><span>Estimated from</span><span data-cart-total>$0.00</span></div>
+      <p class="empty" data-cart-note>Price ranges use the starting price. The shop confirms the final amount. This page does not take payment.</p>
+      <label>Name<input name="name" required autocomplete="name"></label>
+      <label>Phone<input name="phone" type="tel" required autocomplete="tel"></label>
+      <label>Needed<input name="when" placeholder="Saturday delivery, sympathy Friday…"></label>
+      <label>How should it arrive?
+        <select name="method">
+          <option>Delivery</option>
+          <option>Pickup at 5101 S Washington</option>
+        </select>
+      </label>
+      <label>Note<textarea name="note" placeholder="Card message, colors, delivery address"></textarea></label>
+      <button class="btn full" type="submit">Email this order to the shop</button>
+      <div data-order-ready hidden>
+        <p>If email did not open, copy this and send it to info@allseasonsgardencenter.com or call (701) 746-7777.</p>
+        <pre></pre>
+      </div>
+    </form>
+  </aside>
+  <div class="modal-back" data-close-modal></div>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-grid">
+      <img data-modal-img alt="">
+      <div class="modal-copy">
+        <header>
+          <p class="kicker" data-modal-tag></p>
+          <button class="icon-btn" type="button" data-close-modal>Close</button>
+        </header>
+        <h2 id="modal-title" data-modal-title></h2>
+        <p class="price" data-modal-price></p>
+        <p data-modal-copy></p>
+        <button class="btn" type="button" data-modal-add>Add to order</button>
+      </div>
+    </div>
+  </div>
+  <div class="toast" role="status"></div>
+  <script src="js/site.js"></script>
+</body>
+</html>
