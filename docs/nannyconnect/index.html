@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#F4EFE6">
+  <meta name="description" content="NannyConnect interactive prototype. A marketplace where families find nannies, schedule care, and manage bookings.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>NannyConnect — Welcome</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,520;9..144,650&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/app.css?v=3">
+</head>
+<body>
+  <div class="stage">
+    <aside class="brief">
+      <div class="brand">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#1F4A38"/><circle cx="13" cy="15" r="5.2" fill="#F4EFE6"/><circle cx="20.5" cy="17.5" r="4" fill="#E7A23A"/></svg>
+        <div>
+          <p class="brand-kicker">Working concept</p>
+          <strong>NannyConnect</strong>
+        </div>
+      </div>
+      <h1>Childcare, matched to the family.</h1>
+      <p class="brief-lead">A platform connecting families with qualified nannies, so they can discover childcare professionals, compare profiles, schedule care, and manage payments.</p>
+      <p class="brief-note">Name and branding are placeholders for the client.</p>
+      <ol class="steps">
+        <li>Join as a parent and open Elena Vargas.</li>
+        <li>Request a booking and confirm the sample payment.</li>
+        <li>Switch to the nanny dashboard and accept it.</li>
+        <li>Return to My Bookings and see it confirmed.</li>
+      </ol>
+      <nav class="screen-index" aria-label="Prototype screens">
+        <button type="button" data-action="jump" data-screen="welcome"><span>1</span> Welcome / Onboarding</button>
+        <button type="button" data-action="jump" data-screen="parent-home"><span>2</span> Parent Dashboard</button>
+        <button type="button" data-action="jump" data-screen="find"><span>3</span> Find a Nanny</button>
+        <button type="button" data-action="jump" data-screen="profile"><span>4</span> Nanny Profile</button>
+        <button type="button" data-action="jump" data-screen="booking"><span>5</span> Booking &amp; Payment</button>
+        <button type="button" data-action="jump" data-screen="bookings"><span>6</span> My Bookings</button>
+        <button type="button" data-action="jump" data-screen="nanny-home"><span>7</span> Nanny Dashboard</button>
+      </nav>
+      <p class="brief-foot">Prototype 01 · Sample families only · No payment is processed</p>
+    </aside>
+
+    <div class="device-wrap">
+      <div class="device">
+        <div class="notch" aria-hidden="true"></div>
+        <div class="device-screen">
+          <header class="status">
+            <div class="status-left">
+              <span id="clock">9:41</span>
+              <button type="button" class="demo-pill" data-action="sheet" data-sheet="screens">Screens</button>
+            </div>
+            <div class="status-icons" aria-hidden="true">
+              <svg viewBox="0 0 18 12"><rect x="0" y="7" width="3" height="5" rx="0.6" fill="currentColor"/><rect x="5" y="4" width="3" height="8" rx="0.6" fill="currentColor"/><rect x="10" y="1.5" width="3" height="10.5" rx="0.6" fill="currentColor"/><rect x="15" y="0" width="3" height="12" rx="0.6" fill="currentColor" opacity=".35"/></svg>
+              <svg viewBox="0 0 25 12"><rect x="0.6" y="0.6" width="21" height="10.8" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="2" y="2" width="14" height="8" rx="1" fill="currentColor"/><rect x="22.4" y="3.5" width="1.8" height="5" rx="0.6" fill="currentColor"/></svg>
+            </div>
+          </header>
+          <main id="app"></main>
+          <nav id="tabbar" aria-label="App"></nav>
+          <div class="home-indicator" aria-hidden="true"></div>
+          <div id="overlay"></div>
+        </div>
+      </div>
+      <p class="device-caption">Sample data only. Payments are not processed.</p>
+    </div>
+  </div>
+  <script src="js/app.js?v=3"></script>
+</body>
+</html>
