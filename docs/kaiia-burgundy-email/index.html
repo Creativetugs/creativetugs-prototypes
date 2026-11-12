@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=420, initial-scale=1" />
+  <title>kaiia — colour focus: burgundy</title>
+  <style>
+    @font-face {
+      font-family: "Kaiia Display";
+      src: url("assets/NewScience-MediumExtended.otf") format("opentype");
+      font-weight: 500;
+      font-style: normal;
+      font-display: block;
+    }
+    @font-face {
+      font-family: "Kaiia Display";
+      src: url("assets/NewScience-RegularExtended.otf") format("opentype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: block;
+    }
+    @font-face {
+      font-family: "Kaiia Sans";
+      src: url("assets/HelveticaNeue-Light.otf") format("opentype");
+      font-weight: 300;
+      font-style: normal;
+      font-display: block;
+    }
+    @font-face {
+      font-family: "Kaiia Sans";
+      src: url("assets/HelveticaNeue-Medium.otf") format("opentype");
+      font-weight: 500;
+      font-style: normal;
+      font-display: block;
+    }
+
+    :root {
+      --ink: #141204;
+      --paper: #ffffff;
+      --burgundy: #6e2240;
+      --muted: #6a6560;
+      --line: #e6e2dc;
+      --inbox: #f3f1ed;
+      --width: 420px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--paper); }
+    body {
+      color: var(--ink);
+      font-family: "Kaiia Sans", Helvetica, Arial, sans-serif;
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; width: 100%; height: auto; border: 0; }
+    a { color: inherit; text-decoration: none; }
+
+    .email {
+      width: var(--width);
+      margin: 0 auto;
+      background: var(--paper);
+    }
+
+    /* Inbox */
+    .inbox {
+      background: var(--inbox);
+      padding: 18px 22px 16px;
+      border-bottom: 1px solid var(--line);
+    }
+    .inbox-logo { width: 78px; height: auto; margin-bottom: 12px; }
+    .subject {
+      margin: 0;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 1.3;
+      letter-spacing: -0.011em;
+    }
+    .preview {
+      margin: 3px 0 0;
+      font-size: 13.5px;
+      line-height: 1.35;
+      color: var(--muted);
+    }
+
+    /* Bar + logo */
+    .ship {
+      background: var(--burgundy);
+      color: #fff;
+      text-align: center;
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      padding: 10px 16px 9px;
+    }
+    .brand {
+      padding: 22px 22px 18px;
+      display: flex;
+      justify-content: center;
+    }
+    .brand img { width: 118px; height: auto; }
+
+    /* Hero */
+    .hero { line-height: 0; }
+    .hero img {
+      width: 100%;
+      height: auto;
+    }
+
+    .intro {
+      padding: 28px 22px 8px;
+    }
+    .eyebrow {
+      margin: 0 0 8px;
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      color: var(--burgundy);
+    }
+    h1 {
+      margin: 0;
+      font-family: "Kaiia Display", "Arial Narrow", sans-serif;
+      font-weight: 500;
+      font-size: 54px;
+      line-height: 0.9;
+      letter-spacing: -0.02em;
+    }
+    .dek {
+      margin: 14px 0 0;
+      max-width: 18em;
+      font-size: 16px;
+      line-height: 1.4;
+    }
+    .cta {
+      display: block;
+      margin: 22px 22px 6px;
+      background: var(--burgundy);
+      color: #fff;
+      text-align: center;
+      font-weight: 500;
+      font-size: 15px;
+      letter-spacing: 0.01em;
+      padding: 16px 16px 15px;
+    }
+
+    /* Sections */
+    .block { padding: 34px 0 8px; }
+    .block-copy { padding: 0 22px 14px; }
+    h2 {
+      margin: 0;
+      font-family: "Kaiia Display", "Arial Narrow", sans-serif;
+      font-weight: 500;
+      font-size: 28px;
+      line-height: 0.94;
+      letter-spacing: -0.02em;
+    }
+    .dek-s {
+      margin: 10px 0 0;
+      font-size: 14.5px;
+      line-height: 1.4;
+      max-width: 100%;
+    }
+
+    .pair {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 4px;
+      width: 100%;
+    }
+    .card { display: flex; flex-direction: column; background: #f4f3f1; min-width: 0; }
+    .card .frame {
+      aspect-ratio: 2 / 3;
+      overflow: hidden;
+      background: #eceae8;
+    }
+    .card .frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .pos-slogan-top { object-position: center 22%; }
+    .pos-slogan-pant { object-position: center 30%; }
+    .pos-zip { object-position: center 32%; }
+    .pos-trouser { object-position: 72% center; }
+    .pos-stripe-hoody { object-position: center 18%; }
+    .pos-stripe-jog { object-position: center 42%; }
+    .pos-mitt { object-position: center 22%; }
+    .pos-beanie { object-position: center 18%; }
+
+    .meta {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      min-width: 0;
+      padding: 10px 10px 16px;
+      background: var(--paper);
+    }
+    .name {
+      margin: 0;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 1.3;
+      overflow-wrap: anywhere;
+    }
+    .colour {
+      margin: 3px 0 0;
+      font-size: 12px;
+      line-height: 1.3;
+      color: var(--muted);
+    }
+    .price {
+      margin: auto 0 0;
+      padding-top: 8px;
+      font-weight: 500;
+      font-size: 13px;
+    }
+
+    .story {
+      line-height: 0;
+    }
+    .story img {
+      width: 100%;
+      height: auto;
+    }
+    .story-note {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 4px;
+      width: 100%;
+      padding: 0;
+    }
+    .story-note .meta { padding: 12px 14px 16px; }
+
+    /* Close */
+    .close {
+      margin-top: 28px;
+      background: var(--burgundy);
+      color: #fff;
+      padding: 42px 22px 28px;
+      text-align: center;
+    }
+    .close .logo-light {
+      width: 128px;
+      height: auto;
+      margin: 0 auto 22px;
+      filter: brightness(0) invert(1);
+    }
+    .close h2 {
+      font-size: 36px;
+      max-width: none;
+      margin: 0 auto;
+    }
+    .close .dek-s {
+      margin: 12px auto 0;
+      max-width: 16em;
+      color: rgba(255, 255, 255, 0.88);
+    }
+    .cta-light {
+      display: block;
+      margin: 22px 0 0;
+      background: #fff;
+      color: var(--burgundy);
+      text-align: center;
+      font-weight: 500;
+      font-size: 15px;
+      padding: 16px 16px 15px;
+    }
+    .foot {
+      margin-top: 28px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.28);
+      font-size: 11.5px;
+      line-height: 1.55;
+      color: rgba(255, 255, 255, 0.82);
+    }
+    .foot p { margin: 0 0 6px; }
+    .foot .handle { font-weight: 500; color: #fff; letter-spacing: 0.02em; }
+  </style>
+</head>
+<body>
+  <article class="email">
+    <header class="inbox">
+      <img class="inbox-logo" src="assets/logo.png" alt="kaiia" />
+      <p class="subject">colour focus: burgundy &#127826;</p>
+      <p class="preview">rich tones, cosy layers &amp; matching accessories</p>
+    </header>
+
+    <p class="ship">free uk shipping on orders over £70</p>
+
+    <div class="brand">
+      <img src="assets/logo.png" alt="kaiia" />
+    </div>
+
+    <div class="hero">
+      <img src="assets/slogan-hoodie-life.jpg" alt="Deep burgundy slogan hoodie and wide leg sweat pants, worn together." />
+    </div>
+
+    <div class="intro">
+      <p class="eyebrow">colour focus</p>
+      <h1>burgundy</h1>
+      <p class="dek">rich tones, cosy layers &amp; matching accessories.</p>
+    </div>
+    <a class="cta" href="https://www.kaiiathelabel.com/collections/all">shop burgundy</a>
+
+    <section class="block">
+      <div class="block-copy">
+        <p class="eyebrow">the co-ord</p>
+        <h2>deep burgundy<br>slogan co-ord</h2>
+        <p class="dek-s">oversized hoodie and wide leg sweat pants, worn as a set.</p>
+      </div>
+      <div class="pair">
+        <article class="card">
+          <div class="frame">
+            <img class="pos-slogan-top" src="assets/slogan-hoodie-1.jpg" alt="Kaiia Slogan Oversized Hoodie Deep Burgundy" />
+          </div>
+          <div class="meta">
+            <p class="name">kaiia slogan oversized hoodie<br>co-ord deep burgundy</p>
+            <p class="price">£36</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="frame">
+            <img class="pos-slogan-pant" src="assets/slogan-pants-1.jpg" alt="Kaiia Wide Leg Sweat Pants Deep Burgundy" />
+          </div>
+          <div class="meta">
+            <p class="name">wide leg sweat pants<br>co-ord deep burgundy</p>
+            <p class="price">£26</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="block-copy">
+        <p class="eyebrow">the knit</p>
+        <h2>dark cherry<br>knit</h2>
+        <p class="dek-s">lightweight knit. a sport stripe zip through in dark cherry &amp; pink, with side stripe wide legs in dark cherry &amp; cream.</p>
+      </div>
+      <div class="pair">
+        <article class="card">
+          <div class="frame">
+            <img class="pos-zip" src="assets/knit-zip-2.jpg" alt="Kaiia Lightweight Knit Sport Stripe Zip Through Sweatshirt Dark Cherry and Pink" />
+          </div>
+          <div class="meta">
+            <p class="name">kaiia lightweight knit<br>sport stripe zip through<br>sweatshirt<br>dark cherry &amp; pink</p>
+            <p class="price">£45</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="frame">
+            <img class="pos-trouser" src="assets/knit-trouser-crop.jpg" alt="Kaiia Lightweight Knit Side Stripe Wide Leg Trousers Dark Cherry and Cream" />
+          </div>
+          <div class="meta">
+            <p class="name">kaiia lightweight knit<br>side stripe wide leg<br>trousers<br>dark cherry &amp; cream</p>
+            <p class="price">£45</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="block-copy">
+        <p class="eyebrow">the set</p>
+        <h2>dark cherry<br>embossed co-ord</h2>
+        <p class="dek-s">cosy layers, logo pressed into the cloth. oversized hoodie and wide leg joggers.</p>
+      </div>
+      <div class="story">
+        <img src="assets/emboss-hoodie-1.jpg" alt="Embossed logo hoodie and wide leg joggers in dark cherry." />
+      </div>
+      <div class="story-note">
+        <div class="meta">
+          <p class="name">kaiia embossed logo<br>oversized hoodie<br>dark cherry</p>
+          <p class="price">£38</p>
+        </div>
+        <div class="meta">
+          <p class="name">kaiia embossed logo<br>wide leg joggers<br>dark cherry</p>
+          <p class="price">£28</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="block-copy">
+        <p class="eyebrow">side stripe</p>
+        <h2>burgundy &amp;<br>pink chai<br>side stripe co-ord</h2>
+        <p class="dek-s">side stripes, matched. oversized hoodie and wide leg joggers.</p>
+      </div>
+      <div class="pair">
+        <article class="card">
+          <div class="frame">
+            <img class="pos-stripe-hoody" src="assets/stripe-hoodie-1.jpg" alt="Kaiia Sport Side Stripe Oversized Hoodie Burgundy and Pink Chai" />
+          </div>
+          <div class="meta">
+            <p class="name">kaiia sport side stripe<br>oversized hoodie<br>burgundy &amp; pink chai</p>
+            <p class="price">£38</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="frame">
+            <img class="pos-stripe-jog" src="assets/stripe-jogger-3.jpg" alt="Kaiia Logo Side Stripe Wide Leg Joggers Burgundy and Pink Chai" />
+          </div>
+          <div class="meta">
+            <p class="name">kaiia logo side stripe<br>wide leg joggers<br>burgundy &amp; pink chai</p>
+            <p class="price">£30</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="block-copy">
+        <p class="eyebrow">to finish</p>
+        <h2>burgundy<br>accessories</h2>
+        <p class="dek-s">the fluffy knit layer. mittens and beanie, both in burgundy.</p>
+      </div>
+      <div class="pair">
+        <article class="card">
+          <div class="frame">
+            <img class="pos-mitt" src="assets/mittens-1.jpg" alt="Kaiia Logo Fluffy Knit Mittens Burgundy" />
+          </div>
+          <div class="meta">
+            <p class="name">kaiia logo fluffy knit<br>mittens burgundy</p>
+            <p class="price">£10</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="frame">
+            <img class="pos-beanie" src="assets/beanie-1.jpg" alt="Kaiia Logo Fluffy Knit Beanie Burgundy" />
+          </div>
+          <div class="meta">
+            <p class="name">kaiia logo fluffy knit<br>beanie burgundy</p>
+            <p class="price">£12</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer class="close">
+      <img class="logo-light" src="assets/logo.png" alt="kaiia" />
+      <h2>one colour.<br>every layer.</h2>
+      <p class="dek-s">the sets, the knit and the finishing layer.</p>
+      <a class="cta-light" href="https://www.kaiiathelabel.com/collections/all">shop burgundy</a>
+      <div class="foot">
+        <p class="handle">@kaiiathelabel</p>
+        <p>everyday essentials, built on community.</p>
+        <p>kaiia the label · manchester</p>
+        <p>unsubscribe · manage preferences</p>
+      </div>
+    </footer>
+  </article>
+</body>
+</html>
