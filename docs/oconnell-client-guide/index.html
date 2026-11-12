@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>O'Connell Electric client guide · Creative Tugs concept</title>
+  <meta name="description" content="An interactive case study concept for O'Connell Electric. A client guide for services, equipment, project phases, and the right office to call.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@500;600;700&family=Oxanium:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=3">
+</head>
+<body>
+  <div class="pitch">
+    <p>Case study concept by <a href="https://www.creativetugs.com/" target="_blank" rel="noopener">Creative Tugs</a></p>
+    <div class="pitch-links">
+      <a href="https://www.creativetugs.com/" target="_blank" rel="noopener">creativetugs.com</a>
+      <a class="solid" href="https://calendly.com/creativetugs/30min" target="_blank" rel="noopener">Book a call</a>
+    </div>
+  </div>
+
+  <div class="app">
+    <header class="top">
+      <div class="brand">
+        <img src="logo.png" alt="O'Connell Electric Company, since 1911">
+        <div>
+          <p class="brand-kicker">Concept for prospective clients</p>
+          <p class="brand-title">Client guide</p>
+        </div>
+      </div>
+      <a class="phone" href="tel:18003432176">1-800-343-2176</a>
+    </header>
+
+    <div class="shell">
+      <ul class="steps" aria-label="Case study">
+        <li><button type="button" data-go="brief"><span>00</span><strong>The brief</strong></button></li>
+        <li><button type="button" data-go="work"><span>01</span><strong>The work</strong></button></li>
+        <li><button type="button" data-go="capability"><span>02</span><strong>Capability</strong></button></li>
+        <li><button type="button" data-go="path"><span>03</span><strong>The path</strong></button></li>
+        <li><button type="button" data-go="start"><span>04</span><strong>How to start</strong></button></li>
+        <li><button type="button" data-go="job"><span>05</span><strong>On the job</strong></button></li>
+        <li><button type="button" data-go="after"><span>06</span><strong>After the job</strong></button></li>
+        <li><button type="button" data-go="help"><span>07</span><strong>How we help</strong></button></li>
+      </ul>
+
+      <main class="stage" id="stage">
+        <section class="panel" id="brief">
+          <p class="kicker">Case study</p>
+          <h1>A guide clients can step through.</h1>
+          <p class="lede">O'Connell Electric already publishes its services, markets, and projects at oconnellelectric.com. This concept puts the next questions in one place, in the same red, the same type, and the same offices.</p>
+          <div class="facts">
+            <article>
+              <strong>The work</strong>
+              <p>Construction, utility, EPC, service, and off-site construction.</p>
+            </article>
+            <article>
+              <strong>The path</strong>
+              <p>Planning, engineering, procurement, construction, and turnover.</p>
+            </article>
+            <article>
+              <strong>The call</strong>
+              <p>One inquiry, sent to the office that owns that work.</p>
+            </article>
+          </div>
+          <div class="help">
+            <h2>How this helps</h2>
+            <p>A prospective client sees what O'Connell does, what it can put on a job, how a project moves, and who to call. The live site stays the source. This guide is the front door.</p>
+          </div>
+        </section>
+
+        <section class="panel" id="work" hidden>
+          <p class="kicker">01 · The work</p>
+          <h1>Choose the service.</h1>
+          <p class="lede">Five ways O'Connell takes on work. Pick one. The example beside it is already on the company site.</p>
+          <div class="choices" role="group" aria-label="Services">
+            <button type="button" data-work="construction" aria-pressed="true">Construction</button>
+            <button type="button" data-work="utility" aria-pressed="false">Utility</button>
+            <button type="button" data-work="epc" aria-pressed="false">EPC</button>
+            <button type="button" data-work="service" aria-pressed="false">Service</button>
+            <button type="button" data-work="vdc" aria-pressed="false">VDC and off-site</button>
+          </div>
+          <div class="split">
+            <article class="detail" id="work-detail"></article>
+            <aside class="help">
+              <h2>How this helps</h2>
+              <p>A client picks a service and sees a real project type with it.</p>
+            </aside>
+          </div>
+        </section>
+
+        <section class="panel" id="capability" hidden>
+          <p class="kicker">02 · Capability</p>
+          <h1>What can go on the job.</h1>
+          <p class="lede">Crews, the kind of equipment the work calls for, and the offices that field it. Select an office to see the published address.</p>
+          <div class="facts">
+            <article>
+              <strong>Line work</strong>
+              <p>Transmission, distribution, underground cable, and storm restoration.</p>
+            </article>
+            <article>
+              <strong>Substations</strong>
+              <p>Substation construction and medium-voltage service.</p>
+            </article>
+            <article>
+              <strong>Off-site</strong>
+              <p>Prefabrication, material kitting, and Level 400 BIM.</p>
+            </article>
+          </div>
+          <div class="offices" role="group" aria-label="Offices">
+            <button type="button" data-office="victor" aria-pressed="true">Victor</button>
+            <button type="button" data-office="rochester" aria-pressed="false">Rochester</button>
+            <button type="button" data-office="albany" aria-pressed="false">Albany</button>
+            <button type="button" data-office="buffalo" aria-pressed="false">Buffalo</button>
+            <button type="button" data-office="syracuse" aria-pressed="false">Syracuse</button>
+          </div>
+          <div class="split">
+            <article class="detail" id="office-detail"></article>
+            <aside class="help">
+              <h2>How this helps</h2>
+              <p>Equipment and reach sit next to a real office. A client in Syracuse, Buffalo, or the Albany region can see the desk that is closest to the work.</p>
+            </aside>
+          </div>
+        </section>
+
+        <section class="panel" id="path" hidden>
+          <p class="kicker">03 · The path</p>
+          <h1>From first plan to turnover.</h1>
+          <p class="lede">A project presentation. Each phase names what happens and what the client receives.</p>
+          <div class="phases" role="group" aria-label="Project phases">
+            <button type="button" data-phase="0" aria-pressed="true">Planning</button>
+            <button type="button" data-phase="1" aria-pressed="false">Engineering</button>
+            <button type="button" data-phase="2" aria-pressed="false">Procurement</button>
+            <button type="button" data-phase="3" aria-pressed="false">Construction</button>
+            <button type="button" data-phase="4" aria-pressed="false">Turnover</button>
+          </div>
+          <div class="split">
+            <article class="detail phase-view" id="phase-detail"></article>
+            <aside class="help">
+              <h2>How this helps</h2>
+              <p>The engagement process becomes a sequence a client can present inside their own company. Each step ends with a deliverable.</p>
+            </aside>
+          </div>
+        </section>
+
+        <section class="panel" id="start" hidden>
+          <p class="kicker">04 · How to start</p>
+          <h1>Tell us the work.</h1>
+          <p class="lede">The inquiry names the service. The guide returns the office and the phone already published for that work.</p>
+          <div class="needs choices" role="group" aria-label="What do you need">
+            <button type="button" data-need="construction" aria-pressed="true">A new build</button>
+            <button type="button" data-need="utility" aria-pressed="false">Utility or substation</button>
+            <button type="button" data-need="epc" aria-pressed="false">Engineer, procure, construct</button>
+            <button type="button" data-need="service" aria-pressed="false">Service and maintenance</button>
+            <button type="button" data-need="vdc" aria-pressed="false">Prefabrication and VDC</button>
+          </div>
+          <div class="split">
+            <article class="result" id="route-detail"></article>
+            <aside class="help">
+              <h2>How this helps</h2>
+              <p>The client leaves with a named office and a number. The inquiry can be reviewed and handed to the operations lead for that service.</p>
+            </aside>
+          </div>
+        </section>
+
+        <section class="panel" id="job" hidden>
+          <p class="kicker">05 · On the job</p>
+          <h1>One place for the work in progress.</h1>
+          <p class="lede">A sample job view. Updates, questions, and drawings each have a destination. This is a concept, using a project type O'Connell already publishes.</p>
+          <div class="channels" role="group" aria-label="Communication">
+            <button type="button" data-channel="update" aria-pressed="true">Update</button>
+            <button type="button" data-channel="question" aria-pressed="false">Question</button>
+            <button type="button" data-channel="drawing" aria-pressed="false">Drawing</button>
+          </div>
+          <div class="split">
+            <article class="detail" id="channel-detail"></article>
+            <aside class="help">
+              <h2>How this helps</h2>
+              <p>During the job, the client knows where the last update is, where a question goes, and where the current drawings live.</p>
+            </aside>
+          </div>
+        </section>
+
+        <section class="panel" id="after" hidden>
+          <p class="kicker">06 · After the job</p>
+          <h1>Service stays on the work.</h1>
+          <p class="lede">Turnover is the start of preventive maintenance. The same guide keeps the service path open.</p>
+          <div class="facts">
+            <article>
+              <strong>Test</strong>
+              <p>Systems are tested and handed over with the record of what was built.</p>
+            </article>
+            <article>
+              <strong>Maintain</strong>
+              <p>Preventive maintenance stays with the crew that knows the installation.</p>
+            </article>
+            <article>
+              <strong>Call</strong>
+              <p>The service line remains 1-800-343-2176, reviewed at Victor.</p>
+            </article>
+          </div>
+          <div class="help">
+            <h2>How this helps</h2>
+            <p>The relationship continues after go-live. A client who hired O'Connell for construction can start service without searching the site again.</p>
+          </div>
+        </section>
+
+        <section class="panel" id="help" hidden>
+          <p class="kicker">Creative Tugs</p>
+          <h1>How we would build it.</h1>
+          <p class="lede">This is a concept in O'Connell's brand. Creative Tugs can design it, build it on the current WordPress site, and keep the pages current.</p>
+          <article class="ship">
+            <h2>What ships</h2>
+            <ol>
+              <li>The six-step client guide, set in Oxanium and Alexandria, with the red mark and the offices you already publish.</li>
+              <li>An inquiry that names the service, the office, and the phone.</li>
+              <li>A simple job view for updates, questions, and drawings.</li>
+              <li>Care of the guide after launch, so new projects and offices stay in it.</li>
+            </ol>
+            <div class="actions">
+              <a class="solid" href="https://www.creativetugs.com/" target="_blank" rel="noopener">creativetugs.com</a>
+              <a class="line" href="https://calendly.com/creativetugs/30min" target="_blank" rel="noopener">Book a call</a>
+              <a class="line" href="https://www.oconnellelectric.com/" target="_blank" rel="noopener">Current site</a>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <footer class="dock">
+      <button type="button" id="back">Back</button>
+      <p class="progress"><span id="count">00</span> <em>/ 07</em></p>
+      <button type="button" id="next">Next</button>
+    </footer>
+  </div>
+
+  <script src="main.js?v=2"></script>
+</body>
+</html>
