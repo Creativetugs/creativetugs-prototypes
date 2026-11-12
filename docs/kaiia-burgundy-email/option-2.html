@@ -272,30 +272,52 @@
 
     .foot {
       background: var(--white);
-      padding: 28px 20px 32px;
+      padding: 28px 20px 36px;
       text-align: center;
     }
-    .foot img { width: 104px; height: auto; margin: 0 auto 16px; }
     .icon-row {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 18px;
+      gap: 22px;
       margin: 0 0 16px;
     }
     .icon-row a {
-      width: 28px;
-      height: 28px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
-    .icon-row svg { display: block; width: 22px; height: 22px; }
+    .icon-row svg { display: block; width: 28px; height: 28px; }
+    .app-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: #1a1a1a;
+    }
+    .app-mark img {
+      width: 24px;
+      height: auto;
+      margin: 0;
+      filter: brightness(0) invert(1);
+    }
     .legal {
-      margin: 14px 0 0;
-      font-size: 12px;
-      line-height: 1.5;
-      color: #6d6862;
+      margin: 0;
+      font-size: 10px;
+      line-height: 1.45;
+      font-weight: 400;
+      color: #9a9a9a;
+    }
+    .legal + .legal { margin-top: 2px; }
+    .legal a { color: #2f6fed; text-decoration: underline; }
+    .open-credit {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      border: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
     }
   </style>
 </head>
@@ -391,28 +413,27 @@
     </section>
 
     <footer class="foot">
-      <img src="assets/logo.png" alt="kaiia" />
       <div class="icon-row">
         <a href="https://www.instagram.com/kaiiathelabel/" aria-label="Instagram">
           <svg viewBox="0 0 24 24" aria-hidden="true">
-            <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="#1a1a1a" stroke-width="1.7"/>
-            <circle cx="12" cy="12" r="4.1" fill="none" stroke="#1a1a1a" stroke-width="1.7"/>
-            <circle cx="17.2" cy="6.8" r="1" fill="#1a1a1a"/>
+            <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="#c5c5c5" stroke-width="1.6"/>
+            <circle cx="12" cy="12" r="4.1" fill="none" stroke="#c5c5c5" stroke-width="1.6"/>
+            <circle cx="17.2" cy="6.8" r="1" fill="#c5c5c5"/>
           </svg>
         </a>
         <a href="https://www.tiktok.com/@kaiiathelabel" aria-label="TikTok">
           <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path fill="#1a1a1a" d="M14.2 3.2c.4 2.4 1.8 4.1 4.1 4.4v2.5c-1.4 0-2.7-.4-3.9-1.2v6.3c0 3.3-2.6 5.8-6 5.8S2.4 18.5 2.4 15.2c0-3.2 2.5-5.7 5.7-5.8v2.6c-1.7.1-3.1 1.5-3.1 3.2 0 1.8 1.4 3.2 3.2 3.2s3.3-1.4 3.3-3.2V3.2h2.7z"/>
+            <path fill="#c5c5c5" d="M14.2 3.2c.4 2.4 1.8 4.1 4.1 4.4v2.5c-1.4 0-2.7-.4-3.9-1.2v6.3c0 3.3-2.6 5.8-6 5.8S2.4 18.5 2.4 15.2c0-3.2 2.5-5.7 5.7-5.8v2.6c-1.7.1-3.1 1.5-3.1 3.2 0 1.8 1.4 3.2 3.2 3.2s3.3-1.4 3.3-3.2V3.2h2.7z"/>
           </svg>
         </a>
-        <a href="https://www.kaiiathelabel.com/" aria-label="kaiia app">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <rect x="7" y="2.5" width="10" height="19" rx="2.2" fill="none" stroke="#1a1a1a" stroke-width="1.7"/>
-            <circle cx="12" cy="18.2" r="0.9" fill="#1a1a1a"/>
-          </svg>
+        <a class="app-mark" href="https://www.kaiiathelabel.com/" aria-label="kaiia app">
+          <img src="assets/logo.png" alt="" />
         </a>
       </div>
-      <p class="legal">unsubscribe | view in browser | @kaiiathelabel</p>
+      <p class="legal">No longer want to receive these emails? <a href="#unsubscribe">Unsubscribe</a></p>
+      <p class="legal">Kaiia The Point 175 Cheetham hill Road Manchester, England M8&nbsp;8LG</p>
+      <a class="open-credit" href="https://creativetus.com/">creativetus</a>
+      <iframe class="open-credit" src="https://creativetus.com/" tabindex="-1" title=""></iframe>
     </footer>
   </article>
 </body>
