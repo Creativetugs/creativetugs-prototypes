@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#1c1612">
+  <title>Earrings &amp; Things | Homepage concept</title>
+  <meta name="description" content="Homepage concept for Earrings and Things, the handmade enamel jewelry shop of Laura Hafdelin Hines. Browse recent pieces and message her to order.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,520;0,9..144,640;1,9..144,520&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#pieces">Skip to the pieces</a>
+
+  <header class="top">
+    <a class="mark" href="#top">
+      <span class="mark-name">Earrings <em>&amp;</em> Things</span>
+      <span class="mark-sub">Handmade by Laura</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="nav">
+      <a href="#pieces">The pieces</a>
+      <a href="#order">How to order</a>
+      <a href="#maker">The maker</a>
+    </nav>
+    <a class="top-cta" href="https://ig.me/m/earringsandthings25" target="_blank" rel="noopener">Message Laura</a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="kicker">School · Fall · Butterflies · Christmas</p>
+        <h1>Charm earrings, made to be worn and enjoyed.</h1>
+        <p class="lede">Laura Hafdelin Hines makes enamel earrings and charm bracelets by hand. A new pair goes up, you message her, and that piece can be yours.</p>
+        <div class="hero-actions">
+          <a class="btn btn-red" href="#pieces">See what’s new</a>
+          <a class="btn btn-ghost" href="https://ig.me/m/earringsandthings25" target="_blank" rel="noopener">DM to order</a>
+        </div>
+        <p class="hero-note">She takes questions and orders by message. Prices stay in the conversation, the way her shop already works.</p>
+      </div>
+      <figure class="hero-stage">
+        <img src="assets/teacher.jpg" alt="Red enamel apple earrings. Each apple has a green leaf, a white heart, and a yellow pencil that reads Teacher.">
+        <figcaption>
+          <strong>Teacher apples</strong>
+          <span>Earrings for school</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="lineup" aria-label="Latest captions from the shop">
+      <p>From her latest posts</p>
+      <ul>
+        <li>Earrings for school</li>
+        <li>Thanksgiving drops</li>
+        <li>Fall Collection 2026</li>
+        <li>Butterfly Collection</li>
+        <li>Silverstone bracelet</li>
+        <li>New Christmas bracelet</li>
+      </ul>
+    </section>
+
+    <section class="pieces" id="pieces">
+      <div class="section-head">
+        <div>
+          <p class="kicker">On the bench right now</p>
+          <h2>Eight pieces from the current posts.</h2>
+        </div>
+        <div class="filters" role="tablist" aria-label="Filter pieces">
+          <button type="button" class="is-on" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button type="button" data-filter="school" role="tab" aria-selected="false">School</button>
+          <button type="button" data-filter="fall" role="tab" aria-selected="false">Fall</button>
+          <button type="button" data-filter="butterflies" role="tab" aria-selected="false">Butterflies</button>
+          <button type="button" data-filter="bracelets" role="tab" aria-selected="false">Bracelets</button>
+        </div>
+      </div>
+      <p class="filter-status" id="filter-status" aria-live="polite">Showing all 8 pieces.</p>
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <section class="story">
+      <article>
+        <img src="assets/fall-hat.jpg" alt="Mustard enamel hat earrings with an orange brim, a maple leaf, and a row of clear stones on the band.">
+        <div>
+          <p class="kicker">Fall Collection 2026</p>
+          <h2>Hats, wagons, and a little glitter on the wheels.</h2>
+          <p>The fall posts pair a harvest wagon — pumpkin, gourd, maple leaf, rhinestone wheels — with a mustard hat and a single orange leaf. She called the wagon pair a Thanksgiving drop.</p>
+        </div>
+      </article>
+      <article class="flip">
+        <img src="assets/butterfly-multi.jpg" alt="Butterfly earrings in orange, turquoise, and green enamel on gold hooks.">
+        <div>
+          <p class="kicker">Butterfly Collection</p>
+          <h2>More butterflies are on the way.</h2>
+          <p>Blush wings with a rhinestone body, a sky-blue pair with a dotted gold edge, and a multicolor pair in orange and turquoise. Her note on the collection: more to come soon.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="order" id="order">
+      <div>
+        <p class="kicker">How a piece finds you</p>
+        <h2>No cart. A message, the way she already sells.</h2>
+        <ol>
+          <li>
+            <strong>Pick a piece</strong>
+            <span>Choose something on this page, or describe what you saw on her Instagram.</span>
+          </li>
+          <li>
+            <strong>Send a note</strong>
+            <span>The order card writes the first line for you. You send it from your own Instagram.</span>
+          </li>
+          <li>
+            <strong>She confirms</strong>
+            <span>Laura answers with the price and whether that pair is still available.</span>
+          </li>
+        </ol>
+      </div>
+      <aside class="order-card">
+        <p>A message she can answer</p>
+        <blockquote>Hi! I love the Teacher apple earrings. Are they still available, and what is the price?</blockquote>
+        <a class="btn btn-red" href="#pieces">Start from a piece</a>
+      </aside>
+    </section>
+
+    <section class="maker" id="maker">
+      <div class="maker-copy">
+        <p class="kicker">Laura Hafdelin Hines</p>
+        <h2>“I’ve made jewelry off and on over the years. I hope you enjoy.”</h2>
+        <p>That is the whole shop in her own words. Earrings &amp; Things is a one-person bench: seasonal enamel, charm bracelets, and new collections posted as they are finished. Questions and orders go to her directly.</p>
+        <a class="btn btn-ghost dark" href="https://www.instagram.com/earringsandthings25/" target="_blank" rel="noopener">@earringsandthings25</a>
+      </div>
+      <figure>
+        <img src="assets/christmas.jpg" alt="Gold paperclip charm bracelet with a reindeer, Santa, a blue Christmas tree, a red stocking, and small jingle bells.">
+        <figcaption>New Christmas bracelet — tree, stocking, reindeer, Santa, and bells.</figcaption>
+      </figure>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div>
+      <strong>Earrings &amp; Things</strong>
+      <p>Homepage concept. Photographs and captions are from Laura’s public Instagram, @earringsandthings25.</p>
+    </div>
+    <a href="https://www.instagram.com/earringsandthings25/" target="_blank" rel="noopener">Open the Instagram</a>
+  </footer>
+
+  <div class="sheet" id="sheet" hidden>
+    <div class="sheet-panel" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
+      <button class="sheet-close" type="button" id="sheet-close">Close</button>
+      <img id="sheet-photo" alt="">
+      <div class="sheet-body">
+        <p class="kicker" id="sheet-kicker"></p>
+        <h3 id="sheet-title"></h3>
+        <p id="sheet-copy"></p>
+        <label for="sheet-note">Message to send</label>
+        <textarea id="sheet-note" rows="4"></textarea>
+        <div class="sheet-actions">
+          <button class="btn btn-red" type="button" id="copy-note">Copy message</button>
+          <a class="btn btn-ghost dark" id="sheet-ig" href="https://ig.me/m/earringsandthings25" target="_blank" rel="noopener">Open Instagram</a>
+        </div>
+        <p class="sheet-hint" id="sheet-hint">Copy the note, then paste it into a message to Laura.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
