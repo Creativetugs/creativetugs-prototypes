@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Slabfire · 2024 Metro Lions RC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!--
+    Shopify product page for one single.
+    Photo, price, and add to cart are the product form.
+    Ship or pickup are the two delivery methods Shopify already has.
+    "Also on eBay" is the sales channel. You connect it. You do not build eBay.
+  -->
+  <div class="announce">In the case at the shop, and listed on eBay from the same product.</div>
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="logo" href="index.html"><img src="Vector.png" alt="Slabfire"></a>
+      <button class="icon-btn menu-btn" type="button" aria-label="Menu">Menu</button>
+      <nav class="nav" aria-label="Main">
+        <a href="index.html">Shop</a>
+        <a href="break.html">Breaks</a>
+        <a href="buying.html">Buying</a>
+        <a href="visit.html">Visit</a>
+      </nav>
+      <div class="header-tools">
+        <input class="search" type="search" placeholder="Search cards" aria-label="Search cards">
+        <a class="icon-btn" href="card.html">Cart 0</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap product">
+    <div class="product-photo">
+      <img id="product-image" src="Group 48.png" alt="2017 Topps Chrome Aaron Judge">
+    </div>
+    <div>
+      <p class="kicker">Single · qty 1</p>
+      <h1 id="product-title">2017 Topps Chrome Aaron Judge</h1>
+      <p class="price-lg" id="product-price">$100</p>
+      <p class="fine" id="product-note">SGC 9.5. One copy. Ship it, or pick it up at the shop.</p>
+      <form id="buy-form">
+        <div class="choice">
+          <label><input type="radio" name="get" value="ship" checked> Ship it to me</label>
+          <label><input type="radio" name="get" value="pickup"> Pick up at the shop</label>
+        </div>
+        <button class="btn" type="submit">Add to cart</button>
+      </form>
+      <p class="note">Same card can also show on eBay. Shopify’s eBay channel copies this product. eBay Live uses that eBay listing. You do not build a second product page for eBay.</p>
+    </div>
+  </main>
+
+  <div class="toast" id="toast" role="status"></div>
+  <footer>
+    <div class="wrap legal"><a href="index.html">Back to the shop</a></div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

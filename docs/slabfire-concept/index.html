@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Slabfire · Shop and Thursday break</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!--
+    This page is the Shopify home page.
+    announce      = announcement bar
+    site-header   = header (logo, menu, search, cart)
+    hero          = image banner
+    steps         = multicolumn
+    teams         = the break product (full grid is break.html)
+    cards         = collection "Singles"
+    watch         = multicolumn of links. Not custom apps.
+    visit         = image with text
+    footer        = footer
+  -->
+
+  <div class="announce">
+    Thursday 8pm · Prizm basketball · 12 teams left ·
+    <a href="break.html">Claim a team</a>
+  </div>
+
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="logo" href="index.html"><img src="Vector.png" alt="Slabfire"></a>
+      <button class="icon-btn menu-btn" type="button" aria-label="Menu">Menu</button>
+      <nav class="nav" aria-label="Main">
+        <a href="index.html" aria-current="page">Shop</a>
+        <a href="break.html">Breaks</a>
+        <a href="buying.html">Buying</a>
+        <a href="visit.html">Visit</a>
+      </nav>
+      <div class="header-tools">
+        <input class="search" type="search" placeholder="Search cards" aria-label="Search cards">
+        <a class="icon-btn" href="card.html">Cart 0</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="kicker">Brick shop · live breaks</p>
+          <h1>Your team. Your hit. Your clip.</h1>
+          <p class="lede">Claim a team on this site. We rip the box Thursday at 8 in the Facebook group. You get a short video, then you ship it, pick it up, or we list it on eBay.</p>
+          <div class="hero-actions">
+            <a class="btn" href="break.html">Claim a team</a>
+            <a class="btn ghost" href="#singles">See singles</a>
+          </div>
+        </div>
+        <aside class="hero-card">
+          <div class="break-top">
+            <div>
+              <p class="kicker">This Thursday</p>
+              <h2>Prizm basketball</h2>
+            </div>
+            <span class="flame" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="#d44c34"><path d="M12.2 1.2c.6 3.4-1.8 5.4-2.8 8-.7 1.8.1 3.3 1.2 4.2-2.8-.3-5.2-2.7-5.2-5.8C5.4 4.2 8.6 2.2 12.2 1.2z"/><path d="M13 22.2c-3.8 0-6.6-2.5-6.6-6.1 0-3.4 2.3-5.5 3.6-7.6.4 2.4 1.8 3.6 3 3.6.2-2.6-.7-4.9-1.8-7 3.6 1.7 7 4.9 7 9.8 0 4.2-2.5 7.3-5.2 7.3z"/></svg>
+            </span>
+          </div>
+          <p class="price-lg">$25 <span>per team</span></p>
+          <p class="fine">12 of 30 teams still open. One spot per team.</p>
+          <div class="meter" aria-hidden="true"><span></span></div>
+          <a class="btn full" href="break.html">See open teams</a>
+        </aside>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <div class="steps">
+        <article class="step"><div class="num">1</div><b>Claim</b>Pay for your team here. The order is your ticket.</article>
+        <article class="step"><div class="num">2</div><b>Watch</b>We rip live. A 15-second clip is added to your order.</article>
+        <article class="step"><div class="num">3</div><b>Choose</b>Ship it, hold it at the shop, pick it up at the next show, or sell it on eBay.</article>
+      </div>
+
+      <section>
+        <div class="section-head">
+          <div>
+            <h2>Open teams</h2>
+            <p>Each team is one choice on the break product. Sold means someone already paid.</p>
+          </div>
+          <a class="link" href="break.html">All 30 teams</a>
+        </div>
+        <div class="teams">
+          <a class="team is-sold" href="break.html"><strong>Lakers</strong><small>Sold</small></a>
+          <a class="team" href="break.html"><strong>Celtics</strong><small>$25</small></a>
+          <a class="team" href="break.html"><strong>Heat</strong><small>$25</small></a>
+          <a class="team is-sold" href="break.html"><strong>Knicks</strong><small>Sold</small></a>
+          <a class="team" href="break.html"><strong>Bucks</strong><small>$25</small></a>
+          <a class="team" href="break.html"><strong>Nuggets</strong><small>$25</small></a>
+        </div>
+      </section>
+
+      <section id="singles">
+        <div class="section-head">
+          <div>
+            <h2>Singles in the case</h2>
+            <p>A normal Shopify collection. Ship, or pick up at the shop.</p>
+          </div>
+          <a class="link" href="card.html">View a card</a>
+        </div>
+        <div class="cards">
+          <a class="shot" href="card.html?id=sanders"><img src="Group 45.png" alt="Barry Sanders auto, $100"></a>
+          <a class="shot" href="card.html?id=chubb"><img src="Group 46.png" alt="Nick Chubb auto, $100"></a>
+          <a class="shot" href="card.html?id=judge"><img src="Group 48.png" alt="Aaron Judge, $100"></a>
+          <a class="shot" href="card.html?id=kobe"><img src="Group 46 (1).png" alt="Kobe Bryant X-Fractor, $100"></a>
+          <a class="shot" href="card.html?id=brown"><img src="Group 48 (1).png" alt="Jaylen Brown auto, $100"></a>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <div>
+            <h2>Where the show happens</h2>
+            <p>The website takes the payment. The live rooms stay on their own apps.</p>
+          </div>
+        </div>
+        <div class="watch">
+          <a href="break.html"><strong>Facebook group</strong><span>Thursday break. Regulars and team collectors.</span></a>
+          <a href="visit.html"><strong>Whatnot</strong><span>A different night. New buyers find the shop here.</span></a>
+          <a href="card.html"><strong>eBay</strong><span>Singles from this case, synced from Shopify.</span></a>
+          <a href="visit.html"><strong>eBay Live</strong><span>The same eBay listings, shown on camera.</span></a>
+        </div>
+      </section>
+
+      <section>
+        <div class="visit">
+          <div class="visit-copy">
+            <p class="kicker">The shop</p>
+            <h2>Pick up at the counter, or at the next card show.</h2>
+            <p>Online orders can wait here. No shipping if you are in town. At a show, the booth screen plays yesterday’s hits.</p>
+            <a class="btn" href="visit.html">Hours and pickup</a>
+          </div>
+          <div class="map">Shop pickup</div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap foot-grid">
+      <div>
+        <a class="logo" href="index.html"><img src="Vector.png" alt="Slabfire"></a>
+        <p>Card shop online and on the counter. Colors and flame mark follow the Slabfire file.</p>
+      </div>
+      <div>
+        <h3>Shop</h3>
+        <ul>
+          <li><a href="break.html">Thursday break</a></li>
+          <li><a href="card.html">Singles</a></li>
+          <li><a href="buying.html">What we buy</a></li>
+          <li><a href="visit.html">Visit</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Live</h3>
+        <ul>
+          <li><a href="break.html">Facebook breaks</a></li>
+          <li><a href="visit.html">Whatnot</a></li>
+          <li><a href="card.html">eBay</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap legal">Layout concept for a Shopify theme. Open index.html in a browser.</div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

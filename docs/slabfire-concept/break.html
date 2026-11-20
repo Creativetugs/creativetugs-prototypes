@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Slabfire · Thursday break</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!--
+    Shopify product page.
+    One product: "Thursday Prizm basketball".
+    Each team button is one variant. Inventory 1.
+    Sold = variant inventory 0.
+    The sticky bar is the add-to-cart button after a variant is chosen.
+  -->
+  <div class="announce">We rip Thursday 8pm in the Facebook group. Payment stays on this site.</div>
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="logo" href="index.html"><img src="Vector.png" alt="Slabfire"></a>
+      <button class="icon-btn menu-btn" type="button" aria-label="Menu">Menu</button>
+      <nav class="nav" aria-label="Main">
+        <a href="index.html">Shop</a>
+        <a href="break.html" aria-current="page">Breaks</a>
+        <a href="buying.html">Buying</a>
+        <a href="visit.html">Visit</a>
+      </nav>
+      <div class="header-tools">
+        <input class="search" type="search" placeholder="Search cards" aria-label="Search cards">
+        <a class="icon-btn" href="card.html">Cart 0</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="page-intro">
+      <p class="kicker">Break product</p>
+      <h1>Thursday Prizm basketball</h1>
+      <p class="lede">$25 a team. Tap an open team. On Shopify that tap picks the variant and adds it to the cart.</p>
+    </div>
+
+    <div class="teams" id="team-grid">
+      <button class="team is-sold" type="button" disabled><strong>Lakers</strong><small>Sold</small></button>
+      <button class="team" type="button" data-team="Celtics"><strong>Celtics</strong><small>$25</small></button>
+      <button class="team" type="button" data-team="Heat"><strong>Heat</strong><small>$25</small></button>
+      <button class="team is-sold" type="button" disabled><strong>Knicks</strong><small>Sold</small></button>
+      <button class="team" type="button" data-team="Bucks"><strong>Bucks</strong><small>$25</small></button>
+      <button class="team" type="button" data-team="Nuggets"><strong>Nuggets</strong><small>$25</small></button>
+      <button class="team" type="button" data-team="Suns"><strong>Suns</strong><small>$25</small></button>
+      <button class="team is-sold" type="button" disabled><strong>Warriors</strong><small>Sold</small></button>
+      <button class="team" type="button" data-team="Mavs"><strong>Mavs</strong><small>$25</small></button>
+      <button class="team" type="button" data-team="Sixers"><strong>Sixers</strong><small>$25</small></button>
+      <button class="team" type="button" data-team="Nets"><strong>Nets</strong><small>$25</small></button>
+      <button class="team" type="button" data-team="Bulls"><strong>Bulls</strong><small>$25</small></button>
+    </div>
+
+    <div class="pick-bar" id="pick-bar" hidden>
+      <div>Team: <strong id="pick-name">Celtics</strong> · $25</div>
+      <button class="btn" id="add-team" type="button">Add to cart</button>
+    </div>
+
+    <section>
+      <h2>Rules on the product page</h2>
+      <div class="steps">
+        <article class="step"><div class="num">1</div><b>When</b>Thursday 8pm. If a team is not in the box, the spot is refunded.</article>
+        <article class="step"><div class="num">2</div><b>Where</b>Live in the Facebook group. The clip goes on your order the same night.</article>
+        <article class="step"><div class="num">3</div><b>After</b>Email asks: ship, hold at the shop, pick up at the show, or sell on eBay.</article>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <footer>
+    <div class="wrap legal">One Shopify product. Teams are variants. Sold teams are inventory 0.</div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
