@@ -1,0 +1,1126 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Williamsburg–Whitley County Airport (KBYL), a public-use general aviation airport serving southeastern Kentucky." />
+  <title>Williamsburg–Whitley County Airport | KBYL</title>
+
+  <!-- Enhanced Typography Pairing: Outfit (Display), Plus Jakarta Sans (Body), Instrument Serif (Editorial Accent), JetBrains Mono (Aviation Telemetry) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Outfit"', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Instrument Serif"', 'serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            tarmac: '#0A100E',
+            pine: '#12211C',
+            forest: '#1D4637',
+            sage: '#3D7A62',
+            mist: '#E8EFEA',
+            paper: '#F6F8F6',
+            amberrunway: '#D97736',
+            amberlight: '#F3A96B',
+          },
+          keyframes: {
+            kenBurns: {
+              '0%': { transform: 'scale(1.0) translate3d(0, 0, 0)' },
+              '100%': { transform: 'scale(1.08) translate3d(-1%, -1%, 0)' },
+            },
+            floatSlow: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-6px)' },
+            },
+            pulseGlow: {
+              '0%, 100%': { opacity: '1', transform: 'scale(1)' },
+              '50%': { opacity: '0.45', transform: 'scale(1.25)' },
+            }
+          },
+          animation: {
+            'ken-burns': 'kenBurns 24s ease-in-out infinite alternate',
+            'float-slow': 'floatSlow 4.5s ease-in-out infinite',
+            'pulse-glow': 'pulseGlow 2.2s ease-in-out infinite',
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* Smooth reveal transitions triggered by IntersectionObserver */
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1), transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 80ms; }
+    .reveal-delay-2 { transition-delay: 160ms; }
+    .reveal-delay-3 { transition-delay: 240ms; }
+
+    /* Subtle grid pattern for dark aviation sections */
+    .aviation-grid {
+      background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+      background-size: 44px 44px;
+    }
+
+    /* Animated underline for nav links */
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0%;
+      height: 2px;
+      background: #F3A96B;
+      border-radius: 999px;
+      transition: width 0.25s ease;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-tarmac font-sans antialiased selection:bg-amberrunway/20 selection:text-tarmac overflow-x-hidden">
+
+  <!-- Concept Banner -->
+  <div class="bg-[#060908] text-slate-300 text-[11px] font-mono tracking-wider py-2.5 px-4 border-b border-white/10">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center sm:justify-between gap-2 text-center">
+      <span>
+        WEBSITE CONCEPT BY
+        <a href="https://creativetugs.com/" target="_blank" rel="noopener" class="text-white font-semibold underline decoration-amberlight underline-offset-4 hover:text-amberlight transition">CREATIVE TUGS</a>
+        <span class="mx-2 text-white/30">·</span>
+        <a href="https://calendly.com/creativetugs/30min" target="_blank" rel="noopener" class="text-amberlight font-semibold hover:text-white transition">LET’S DISCUSS YOUR PROJECT ↗</a>
+      </span>
+      <!-- Live Zulu (UTC) Aviation Clock -->
+      <span class="hidden sm:inline-flex items-center gap-2 text-[11px] text-emerald-300/90">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse-glow"></span>
+        <span>KBYL</span>
+        <span class="text-white/30">|</span>
+        <span id="zulu-clock-top">UTC --:--:--Z</span>
+      </span>
+    </div>
+  </div>
+
+  <!-- Sticky Glassmorphic Header -->
+  <header id="site-header" class="sticky top-0 z-40 bg-tarmac/90 backdrop-blur-md text-white border-b border-white/10 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-20 sm:h-24 flex items-center justify-between gap-6">
+      <!-- Proportional Logo Lockup -->
+      <a href="#home" aria-label="Williamsburg–Whitley County Airport home" class="flex items-center gap-3 shrink-0 group">
+        <img
+          src="assets/image-01.png"
+          alt="Williamsburg–Whitley County Airport"
+          class="h-11 sm:h-14 w-auto max-w-[230px] sm:max-w-[280px] object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+          onerror="this.onerror=null; this.src='https://placehold.co/260x64/0A100E/FFFFFF?text=KBYL+AIRPORT';"
+        />
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav aria-label="Main navigation" class="hidden lg:flex items-center gap-8 text-xs font-display font-semibold tracking-[0.14em] uppercase">
+        <a href="#airport" class="nav-link text-slate-200 hover:text-white transition">The Airport</a>
+        <a href="#pilot" class="nav-link text-slate-200 hover:text-white transition">Pilot Info</a>
+        <a href="#services" class="nav-link text-slate-200 hover:text-white transition">Services</a>
+        <a href="#runway" class="nav-link text-slate-200 hover:text-white transition">Runway 02/20</a>
+        <a href="#visit" class="nav-link text-slate-200 hover:text-white transition">Explore</a>
+        <a href="#contact" class="inline-flex items-center gap-2 bg-amberrunway hover:bg-amberlight hover:text-tarmac text-white px-5 py-3 rounded-xl font-bold tracking-[0.1em] transition-all duration-200 shadow-lg shadow-amberrunway/20 hover:-translate-y-0.5">
+          Contact
+          <span aria-hidden="true">↗</span>
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-btn"
+        type="button"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+        class="lg:hidden inline-flex items-center justify-center w-11 h-11 rounded-xl border border-white/20 text-white hover:bg-white/10 transition"
+      >
+        <svg id="menu-icon-open" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+        <svg id="menu-icon-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-nav" class="hidden lg:hidden bg-tarmac border-t border-white/10 px-6 py-5 space-y-2">
+      <a href="#airport" class="mobile-link block py-3 px-3 rounded-xl text-sm font-display font-semibold tracking-wider uppercase text-slate-200 hover:bg-white/5 hover:text-white">The Airport</a>
+      <a href="#pilot" class="mobile-link block py-3 px-3 rounded-xl text-sm font-display font-semibold tracking-wider uppercase text-slate-200 hover:bg-white/5 hover:text-white">Pilot Info & Weather</a>
+      <a href="#services" class="mobile-link block py-3 px-3 rounded-xl text-sm font-display font-semibold tracking-wider uppercase text-slate-200 hover:bg-white/5 hover:text-white">Services</a>
+      <a href="#runway" class="mobile-link block py-3 px-3 rounded-xl text-sm font-display font-semibold tracking-wider uppercase text-slate-200 hover:bg-white/5 hover:text-white">Runway 02/20</a>
+      <a href="#visit" class="mobile-link block py-3 px-3 rounded-xl text-sm font-display font-semibold tracking-wider uppercase text-slate-200 hover:bg-white/5 hover:text-white">Explore the Area</a>
+      <a href="#contact" class="mobile-link block mt-3 text-center bg-amberrunway text-white py-3.5 px-4 rounded-xl text-sm font-display font-bold tracking-wider uppercase">Contact the Airport</a>
+    </div>
+  </header>
+
+  <main id="home">
+    <!-- HERO SECTION -->
+    <section class="relative min-h-[640px] lg:min-h-[780px] flex items-end overflow-hidden bg-pine text-white">
+      <!-- Animated Aerial Background -->
+      <img
+        src="assets/image-02.jpg"
+        alt="Aerial view of Williamsburg–Whitley County Airport and its runway among the wooded hills of Kentucky"
+        class="absolute inset-0 w-full h-full object-cover object-center animate-ken-burns"
+        onerror="this.onerror=null; this.src='https://placehold.co/1600x900/12211C/86A395?text=KBYL+Aerial+Runway+View';"
+      />
+      <!-- Rich Layered Gradient Overlay -->
+      <div class="absolute inset-0 bg-gradient-to-r from-[#070E0C]/90 via-[#0A1713]/65 to-[#0A1713]/20"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#0A100E] via-transparent to-black/25"></div>
+
+      <!-- Hero Content -->
+      <div class="relative z-10 max-w-7xl mx-auto w-full px-5 sm:px-8 pt-24 pb-16 sm:pb-24">
+        <div class="max-w-3xl">
+          <!-- Live Aviation Status Pill -->
+          <div class="inline-flex flex-wrap items-center gap-2.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-1.5 mb-7 text-xs font-mono tracking-wider text-emerald-200">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse-glow"></span>
+            <span class="font-semibold text-white">KBYL</span>
+            <span class="text-white/40">•</span>
+            <span>WILLIAMSBURG, KENTUCKY</span>
+            <span class="hidden sm:inline text-white/40">•</span>
+            <span class="hidden sm:inline text-amberlight">24/7 SELF-SERVE FUEL</span>
+          </div>
+
+          <h1 class="font-display font-extrabold text-5xl sm:text-6xl lg:text-[82px] leading-[0.98] tracking-[-0.035em] text-white">
+            Your next stop in
+            <span class="font-serif italic font-normal text-amberlight tracking-normal">southeastern</span>
+            Kentucky.
+          </h1>
+
+          <p class="mt-6 text-base sm:text-lg lg:text-xl text-slate-200/95 leading-relaxed max-w-2xl font-normal">
+            Convenient general aviation access to Williamsburg and the Cumberland region, featuring a 5,499-foot asphalt runway, 24-hour self-service fuel, and a warm local welcome for visiting pilots.
+          </p>
+
+          <!-- Primary Hero Actions -->
+          <div class="mt-9 flex flex-wrap items-center gap-4">
+            <a href="#pilot" class="inline-flex items-center gap-3 bg-white text-tarmac hover:bg-amberlight hover:text-tarmac font-display font-bold text-xs sm:text-sm tracking-[0.1em] uppercase px-6 py-4 rounded-xl shadow-xl shadow-black/25 transition-all duration-200 hover:-translate-y-0.5">
+              Pilot Information
+              <span class="text-base leading-none">↗</span>
+            </a>
+            <a href="#services" class="inline-flex items-center gap-3 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/25 font-display font-bold text-xs sm:text-sm tracking-[0.1em] uppercase px-6 py-4 rounded-xl transition-all duration-200 hover:-translate-y-0.5">
+              Explore Services
+            </a>
+          </div>
+        </div>
+
+        <!-- Floating Coordinates Pill (Desktop) -->
+        <div class="hidden xl:flex items-center gap-3 absolute right-8 bottom-12 bg-tarmac/75 backdrop-blur-md border border-white/15 rounded-2xl px-5 py-3.5 animate-float-slow">
+          <div class="w-9 h-9 rounded-xl bg-amberrunway/20 text-amberlight flex items-center justify-center">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-6-5.686-6-10a6 6 0 1112 0c0 4.314-6 10-6 10z" />
+              <circle cx="12" cy="11" r="2.2" />
+            </svg>
+          </div>
+          <div class="font-mono text-[11px] leading-snug">
+            <div class="text-white font-semibold">36°47'42"N · 84°11'57"W</div>
+            <div class="text-slate-400">4 NM NNW of Williamsburg, KY</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUICK TELEMETRY STATS BAR -->
+    <section class="bg-tarmac text-white border-y border-white/10">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8">
+        <div class="grid grid-cols-2 lg:grid-cols-4 divide-y lg:divide-y-0 lg:divide-x divide-white/10">
+          <div class="py-7 sm:py-8 pr-4 lg:px-6 lg:first:pl-0 group">
+            <div class="font-mono text-2xl sm:text-3xl font-bold text-white group-hover:text-amberlight transition">1,177 ft</div>
+            <div class="mt-1.5 text-[11px] font-display font-semibold tracking-[0.16em] uppercase text-slate-400">Field Elevation · MSL</div>
+          </div>
+          <div class="py-7 sm:py-8 pl-4 lg:px-6 group">
+            <div class="font-mono text-2xl sm:text-3xl font-bold text-white group-hover:text-amberlight transition">5,499 × 100</div>
+            <div class="mt-1.5 text-[11px] font-display font-semibold tracking-[0.16em] uppercase text-slate-400">Runway 02 / 20 · Feet</div>
+          </div>
+          <div class="py-7 sm:py-8 pr-4 lg:px-6 group">
+            <div class="font-mono text-2xl sm:text-3xl font-bold text-emerald-300 group-hover:text-amberlight transition">24 Hours</div>
+            <div class="mt-1.5 text-[11px] font-display font-semibold tracking-[0.16em] uppercase text-slate-400">Self-Service Fuel</div>
+          </div>
+          <button
+            type="button"
+            onclick="copyText('122.700 MHz', 'CTAF / UNICOM frequency copied!')"
+            class="py-7 sm:py-8 pl-4 lg:px-6 text-left group focus:outline-none"
+            title="Click to copy CTAF frequency"
+          >
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-2xl sm:text-3xl font-bold text-white group-hover:text-amberlight transition">122.700</span>
+              <span class="text-[10px] font-mono bg-white/10 text-slate-300 group-hover:bg-amberrunway group-hover:text-white px-2 py-0.5 rounded-md transition">COPY</span>
+            </div>
+            <div class="mt-1.5 text-[11px] font-display font-semibold tracking-[0.16em] uppercase text-slate-400">CTAF / UNICOM · MHz</div>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE AIRPORT / WELCOME SECTION -->
+    <section id="airport" class="py-20 sm:py-28 bg-white">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8">
+        <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <!-- Copy Column -->
+          <div class="lg:col-span-5 reveal">
+            <div class="inline-flex items-center gap-2 text-xs font-mono font-semibold tracking-[0.16em] uppercase text-sage mb-4">
+              <span class="w-6 h-0.5 bg-amberrunway rounded-full"></span>
+              A Community Airport With a Personal Welcome
+            </div>
+            <h2 class="font-display font-extrabold text-4xl sm:text-5xl leading-[1.05] tracking-[-0.03em] text-tarmac">
+              Connecting pilots with <span class="font-serif italic font-normal text-forest">southeastern</span> Kentucky.
+            </h2>
+            <div class="mt-6 space-y-4 text-slate-600 text-[15px] sm:text-base leading-relaxed">
+              <p>
+                Williamsburg–Whitley County Airport is a public-use general aviation airport located approximately four miles north-northwest of Williamsburg.
+              </p>
+              <p>
+                We serve local and visiting pilots, aircraft owners, businesses, and the wider community with essential airport facilities and a welcoming place to stop.
+              </p>
+              <p>
+                Whether you’re arriving for fuel, arranging aircraft storage, or visiting the region, our aim is to make your time on the ground straightforward.
+              </p>
+            </div>
+            <div class="mt-8 flex flex-wrap items-center gap-4">
+              <a href="#contact" class="inline-flex items-center gap-3 bg-tarmac hover:bg-forest text-white font-display font-bold text-xs tracking-[0.12em] uppercase px-6 py-4 rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-tarmac/10">
+                Get in Touch
+                <span>↗</span>
+              </a>
+              <a href="#runway" class="inline-flex items-center gap-2 text-xs font-display font-bold tracking-[0.12em] uppercase text-forest hover:text-amberrunway px-3 py-3 transition">
+                View Runway Specs →
+              </a>
+            </div>
+          </div>
+
+          <!-- Layered Photo Collage -->
+          <div class="lg:col-span-7 reveal reveal-delay-2">
+            <div class="grid grid-cols-2 gap-4">
+              <div class="col-span-2 relative rounded-2xl overflow-hidden shadow-xl shadow-tarmac/10 group">
+                <img
+                  src="assets/image-03.jpg"
+                  alt="Aerial photograph of KBYL runway, apron and hangars"
+                  class="w-full h-64 sm:h-80 object-cover transition-transform duration-700 group-hover:scale-105"
+                  onerror="this.onerror=null; this.src='https://placehold.co/900x480/1D4637/E8EFEA?text=KBYL+Runway+%26+Apron';"
+                />
+                <div class="absolute bottom-3 left-3 bg-tarmac/75 backdrop-blur-md text-white text-[11px] font-mono px-3 py-1.5 rounded-lg border border-white/10">
+                  KBYL Apron & Hangar Complex
+                </div>
+              </div>
+              <div class="relative rounded-2xl overflow-hidden shadow-lg shadow-tarmac/5 group">
+                <img
+                  src="assets/image-04.jpg"
+                  alt="Runway and airport grounds"
+                  class="w-full h-44 sm:h-52 object-cover transition-transform duration-700 group-hover:scale-105"
+                  onerror="this.onerror=null; this.src='https://placehold.co/450x320/2A4D3E/E8EFEA?text=Self-Serve+Fuel+%26+Ramp';"
+                />
+              </div>
+              <div class="relative rounded-2xl overflow-hidden shadow-lg shadow-tarmac/5 group">
+                <img
+                  src="assets/image-05.jpg"
+                  alt="Airport pilot information and terminal area"
+                  class="w-full h-44 sm:h-52 object-cover transition-transform duration-700 group-hover:scale-105"
+                  onerror="this.onerror=null; this.src='https://placehold.co/450x320/1B2B25/E8EFEA?text=Pilot+Briefing+Terminal';"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE PILOT BRIEFING & WEATHER SECTION -->
+    <section id="pilot" class="py-20 sm:py-28 bg-pine aviation-grid text-white relative overflow-hidden">
+      <!-- Decorative Ambient Glow -->
+      <div class="pointer-events-none absolute -top-24 -right-24 w-96 h-96 rounded-full bg-amberrunway/10 blur-3xl"></div>
+      <div class="pointer-events-none absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-emerald-500/10 blur-3xl"></div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8">
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12 reveal">
+          <div class="max-w-2xl">
+            <div class="inline-flex items-center gap-2 text-xs font-mono font-semibold tracking-[0.16em] uppercase text-amberlight mb-3">
+              <span class="w-6 h-0.5 bg-amberlight rounded-full"></span>
+              Plan Your Arrival
+            </div>
+            <h2 class="font-display font-extrabold text-4xl sm:text-5xl leading-[1.05] tracking-[-0.03em]">
+              Airport conditions &amp; <span class="font-serif italic font-normal text-emerald-300">pilot briefing</span>.
+            </h2>
+            <p class="mt-4 text-slate-300 text-base leading-relaxed">
+              A quick reference to the airport details pilots commonly need. Always confirm current weather, NOTAMs, and FAA publications before flight.
+            </p>
+          </div>
+
+          <!-- Live Clock Card -->
+          <div class="inline-flex items-center gap-4 bg-white/5 border border-white/10 rounded-2xl px-5 py-3.5 backdrop-blur-md self-start lg:self-auto">
+            <div>
+              <div class="text-[10px] font-mono uppercase tracking-widest text-slate-400">Zulu Time (UTC)</div>
+              <div id="zulu-clock-card" class="font-mono text-lg font-bold text-white">--:--:-- Z</div>
+            </div>
+            <div class="w-px h-8 bg-white/15"></div>
+            <div>
+              <div class="text-[10px] font-mono uppercase tracking-widest text-slate-400">AWOS Freq</div>
+              <button
+                type="button"
+                onclick="copyText('119.575 MHz', 'AWOS frequency copied!')"
+                class="font-mono text-lg font-bold text-amberlight hover:text-white transition"
+              >
+                119.575
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Weather & Interactive Runway Wind Card -->
+        <div class="bg-white text-tarmac rounded-3xl p-6 sm:p-9 shadow-2xl shadow-black/30 reveal reveal-delay-1">
+          <div class="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-slate-200">
+            <div>
+              <div class="flex items-center gap-3 flex-wrap">
+                <h3 class="font-display font-extrabold text-2xl sm:text-3xl tracking-tight">Weather Snapshot · KBYL</h3>
+                <span class="inline-flex items-center gap-1.5 bg-emerald-100 text-emerald-800 font-mono text-[11px] font-bold px-3 py-1 rounded-full">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                  VFR · SAMPLE
+                </span>
+              </div>
+              <p class="text-xs font-mono text-slate-500 mt-1.5">Sample report supplied for this concept · 22 November 2026, 20:55Z</p>
+            </div>
+
+            <!-- Interactive Unit Toggle -->
+            <div class="flex items-center gap-2 bg-slate-100 p-1 rounded-xl">
+              <button id="btn-unit-f" type="button" onclick="setTempUnit('F')" class="px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold bg-tarmac text-white transition">°F / Imperial</button>
+              <button id="btn-unit-c" type="button" onclick="setTempUnit('C')" class="px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold text-slate-600 hover:text-tarmac transition">°C / Metric</button>
+            </div>
+          </div>
+
+          <!-- Weather Metrics + Runway Wind Visualizer -->
+          <div class="grid lg:grid-cols-12 gap-8 py-7 items-center">
+            <div class="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
+              <div class="bg-paper border border-slate-200/80 rounded-2xl p-4 sm:p-5">
+                <span class="block text-[11px] font-mono uppercase tracking-wider text-slate-500">Temperature</span>
+                <b id="weather-temp" class="block mt-2 font-mono text-2xl sm:text-3xl font-bold text-tarmac">68°F</b>
+                <span id="weather-dew" class="block mt-1 text-[11px] font-mono text-slate-500">Dew Pt 54°F</span>
+              </div>
+              <div class="bg-paper border border-slate-200/80 rounded-2xl p-4 sm:p-5">
+                <span class="block text-[11px] font-mono uppercase tracking-wider text-slate-500">Wind</span>
+                <b class="block mt-2 font-mono text-2xl sm:text-3xl font-bold text-tarmac">190°</b>
+                <span class="block mt-1 text-[11px] font-mono text-emerald-700 font-semibold">4 kt · Favor RWY 20</span>
+              </div>
+              <div class="bg-paper border border-slate-200/80 rounded-2xl p-4 sm:p-5">
+                <span class="block text-[11px] font-mono uppercase tracking-wider text-slate-500">Visibility</span>
+                <b class="block mt-2 font-mono text-2xl sm:text-3xl font-bold text-tarmac">9 SM</b>
+                <span class="block mt-1 text-[11px] font-mono text-slate-500">OVC 4,500 ft</span>
+              </div>
+              <div class="bg-paper border border-slate-200/80 rounded-2xl p-4 sm:p-5">
+                <span class="block text-[11px] font-mono uppercase tracking-wider text-slate-500">Altimeter</span>
+                <b class="block mt-2 font-mono text-2xl sm:text-3xl font-bold text-tarmac">29.94</b>
+                <span class="block mt-1 text-[11px] font-mono text-slate-500">inHg</span>
+              </div>
+            </div>
+
+            <!-- Interactive SVG Runway 02/20 Wind Compass -->
+            <div class="lg:col-span-4 flex items-center gap-5 bg-tarmac text-white rounded-2xl p-5">
+              <div class="shrink-0">
+                <svg viewBox="0 0 120 120" class="w-24 h-24" aria-label="Wind direction 190 degrees relative to Runway 02/20">
+                  <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="1.5" stroke-dasharray="3 3" />
+                  <text x="60" y="16" text-anchor="middle" fill="#94A3B8" font-size="9" font-family="JetBrains Mono">N</text>
+                  <text x="106" y="63" text-anchor="middle" fill="#94A3B8" font-size="9" font-family="JetBrains Mono">E</text>
+                  <text x="60" y="111" text-anchor="middle" fill="#94A3B8" font-size="9" font-family="JetBrains Mono">S</text>
+                  <text x="14" y="63" text-anchor="middle" fill="#94A3B8" font-size="9" font-family="JetBrains Mono">W</text>
+                  <!-- Runway 02/20 oriented at 023° / 203° -->
+                  <g transform="rotate(23 60 60)">
+                    <rect x="55" y="24" width="10" height="72" rx="2" fill="#334155" stroke="#94A3B8" stroke-width="1" />
+                    <line x1="60" y1="30" x2="60" y2="90" stroke="#FFFFFF" stroke-width="1" stroke-dasharray="4 4" />
+                  </g>
+                  <!-- Wind Arrow from 190° -->
+                  <g transform="rotate(190 60 60)">
+                    <line x1="60" y1="18" x2="60" y2="44" stroke="#F3A96B" stroke-width="3" stroke-linecap="round" />
+                    <polygon points="60,50 54,40 66,40" fill="#F3A96B" />
+                  </g>
+                </svg>
+              </div>
+              <div class="text-xs font-mono space-y-1.5">
+                <div class="text-amberlight font-bold uppercase tracking-wider">Wind Alignment</div>
+                <div class="text-slate-300">RWY 20 Headwind: <span class="text-white font-semibold">3.9 kt</span></div>
+                <div class="text-slate-300">Crosswind: <span class="text-white font-semibold">0.9 kt L</span></div>
+                <div class="text-[10px] text-slate-400 pt-1">Based on sample METAR</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Raw METAR Strip with One-Click Copy -->
+          <div class="bg-slate-50 border border-slate-200 rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div class="font-mono text-xs text-slate-600 break-words">
+              <span class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1">Raw METAR · Supplied Sample</span>
+              <code id="metar-string" class="text-tarmac font-medium">METAR KBYL 222055Z AUTO 19004KT 9SM OVC045 20/12 A2994 RMK AO2 T02020120 56018 $</code>
+            </div>
+            <div class="flex items-center gap-3 shrink-0">
+              <button
+                type="button"
+                onclick="copyText(document.getElementById('metar-string').textContent, 'Raw METAR copied to clipboard!')"
+                class="inline-flex items-center gap-2 bg-white hover:bg-tarmac hover:text-white border border-slate-300 text-tarmac font-mono text-xs font-semibold px-4 py-2.5 rounded-xl transition"
+              >
+                Copy METAR
+              </button>
+              <a
+                href="https://kbyl.awos.live/"
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center gap-2 bg-forest hover:bg-amberrunway text-white font-display font-bold text-xs tracking-wider uppercase px-4 py-2.5 rounded-xl transition"
+              >
+                Live AWOS ↗
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ON-FIELD SERVICES SECTION -->
+    <section id="services" class="py-20 sm:py-28 bg-white">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8">
+        <div class="max-w-2xl mb-14 reveal">
+          <div class="inline-flex items-center gap-2 text-xs font-mono font-semibold tracking-[0.16em] uppercase text-sage mb-3">
+            <span class="w-6 h-0.5 bg-amberrunway rounded-full"></span>
+            On-Field Facilities
+          </div>
+          <h2 class="font-display font-extrabold text-4xl sm:text-5xl leading-[1.05] tracking-[-0.03em] text-tarmac">
+            Useful services. A <span class="font-serif italic font-normal text-amberrunway">smoother</span> stop.
+          </h2>
+          <p class="mt-4 text-slate-600 text-base leading-relaxed">
+            Practical amenities designed for based and transient pilots, aircraft owners, and regional visitors.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Service Card 1 -->
+          <article class="reveal group relative bg-paper hover:bg-white border border-slate-200/80 hover:border-amberrunway/50 rounded-2xl p-7 flex flex-col transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-tarmac/5 overflow-hidden">
+            <div class="absolute top-0 left-0 right-0 h-1 bg-amberrunway"></div>
+            <div class="w-14 h-14 rounded-2xl bg-white border border-slate-200 group-hover:bg-amberrunway group-hover:border-amberrunway group-hover:text-white text-forest flex items-center justify-center mb-6 transition-colors duration-300 shadow-sm">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <path d="M4 20h14M6 20V6a2 2 0 012-2h6a2 2 0 012 2v14M9 9h4M16 10h2a2 2 0 012 2v5a1.5 1.5 0 003 0v-6l-3-3" />
+              </svg>
+            </div>
+            <h3 class="font-display font-bold text-xl text-tarmac mb-2.5">24-hour self-service fuel</h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-6">
+              Fuel available around the clock. Major credit cards are accepted. Contact the airport to confirm current fuel types and pricing.
+            </p>
+            <div class="mt-auto pt-4 border-t border-slate-200/70 font-mono text-[11px] font-semibold text-amberrunway tracking-wide">
+              100LL · JET A / A+ — CONFIRM AVAILABILITY
+            </div>
+          </article>
+
+          <!-- Service Card 2 -->
+          <article class="reveal reveal-delay-1 group relative bg-paper hover:bg-white border border-slate-200/80 hover:border-forest/50 rounded-2xl p-7 flex flex-col transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-tarmac/5 overflow-hidden">
+            <div class="absolute top-0 left-0 right-0 h-1 bg-forest"></div>
+            <div class="w-14 h-14 rounded-2xl bg-white border border-slate-200 group-hover:bg-forest group-hover:border-forest group-hover:text-white text-forest flex items-center justify-center mb-6 transition-colors duration-300 shadow-sm">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <path d="M3 20V8l9-5 9 5v12M7 20v-7h10v7M3 8h18" />
+              </svg>
+            </div>
+            <h3 class="font-display font-bold text-xl text-tarmac mb-2.5">Hangars &amp; aircraft storage</h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-6">
+              Hangar leasing and ramp tie-down options for based and transient aircraft. Contact management for current availability and rates.
+            </p>
+            <div class="mt-auto pt-4 border-t border-slate-200/70 font-mono text-[11px] font-semibold text-forest tracking-wide">
+              ASK ABOUT HANGAR AVAILABILITY
+            </div>
+          </article>
+
+          <!-- Service Card 3 -->
+          <article class="reveal reveal-delay-2 group relative bg-paper hover:bg-white border border-slate-200/80 hover:border-sage/50 rounded-2xl p-7 flex flex-col transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-tarmac/5 overflow-hidden">
+            <div class="absolute top-0 left-0 right-0 h-1 bg-sage"></div>
+            <div class="w-14 h-14 rounded-2xl bg-white border border-slate-200 group-hover:bg-sage group-hover:border-sage group-hover:text-white text-forest flex items-center justify-center mb-6 transition-colors duration-300 shadow-sm">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <path d="M12 2L9 9H3l4.5 4-1.5 7L12 16l6 4-1.5-7L21 9h-6L12 2z" />
+              </svg>
+            </div>
+            <h3 class="font-display font-bold text-xl text-tarmac mb-2.5">Aircraft parking &amp; tie-downs</h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-6">
+              Generous ramp parking and secure tie-down facilities to support both visiting and based general aviation aircraft.
+            </p>
+            <div class="mt-auto pt-4 border-t border-slate-200/70 font-mono text-[11px] font-semibold text-sage tracking-wide">
+              CONTACT AIRPORT MANAGEMENT
+            </div>
+          </article>
+
+          <!-- Service Card 4 -->
+          <article class="reveal group relative bg-paper hover:bg-white border border-slate-200/80 hover:border-forest/50 rounded-2xl p-7 flex flex-col transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-tarmac/5 overflow-hidden">
+            <div class="absolute top-0 left-0 right-0 h-1 bg-forest"></div>
+            <div class="w-14 h-14 rounded-2xl bg-white border border-slate-200 group-hover:bg-forest group-hover:border-forest group-hover:text-white text-forest flex items-center justify-center mb-6 transition-colors duration-300 shadow-sm">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <path d="M5 12.55a11 11 0 0114.08 0M8.53 16.11a6 6 0 016.95 0M12 20h.01" />
+              </svg>
+            </div>
+            <h3 class="font-display font-bold text-xl text-tarmac mb-2.5">Complimentary Wi-Fi</h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-6">
+              Free high-speed Wi-Fi is available to pilots and guests while at the airport for flight planning, weather briefings, or work.
+            </p>
+            <div class="mt-auto pt-4 border-t border-slate-200/70 font-mono text-[11px] font-semibold text-forest tracking-wide">
+              AVAILABLE FOR PILOTS &amp; GUESTS
+            </div>
+          </article>
+
+          <!-- Service Card 5 -->
+          <article class="reveal reveal-delay-1 group relative bg-paper hover:bg-white border border-slate-200/80 hover:border-amberrunway/50 rounded-2xl p-7 flex flex-col transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-tarmac/5 overflow-hidden">
+            <div class="absolute top-0 left-0 right-0 h-1 bg-amberrunway"></div>
+            <div class="w-14 h-14 rounded-2xl bg-white border border-slate-200 group-hover:bg-amberrunway group-hover:border-amberrunway group-hover:text-white text-forest flex items-center justify-center mb-6 transition-colors duration-300 shadow-sm">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+                <circle cx="12" cy="12" r="4" />
+              </svg>
+            </div>
+            <h3 class="font-display font-bold text-xl text-tarmac mb-2.5">Weather information</h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-6">
+              Access current local airfield weather observations anytime through the airport’s AWOS online service or VHF frequency.
+            </p>
+            <div class="mt-auto pt-4 border-t border-slate-200/70 font-mono text-[11px] font-semibold text-amberrunway tracking-wide">
+              <a href="https://kbyl.awos.live/" target="_blank" rel="noopener" class="hover:underline">VIEW AWOS WEATHER ↗</a>
+            </div>
+          </article>
+
+          <!-- Service Card 6 -->
+          <article class="reveal reveal-delay-2 group relative bg-paper hover:bg-white border border-slate-200/80 hover:border-sage/50 rounded-2xl p-7 flex flex-col transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-tarmac/5 overflow-hidden">
+            <div class="absolute top-0 left-0 right-0 h-1 bg-sage"></div>
+            <div class="w-14 h-14 rounded-2xl bg-white border border-slate-200 group-hover:bg-sage group-hover:border-sage group-hover:text-white text-forest flex items-center justify-center mb-6 transition-colors duration-300 shadow-sm">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <path d="M5 17h14M6 17l1.5-5h9L18 17M7 17v2m10-2v2M8 12l1.5-4h5L16 12" />
+              </svg>
+            </div>
+            <h3 class="font-display font-bold text-xl text-tarmac mb-2.5">Courtesy transportation</h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-6">
+              A courtesy vehicle may be available upon request for quick trips into Williamsburg. Contact the airport ahead of your visit to coordinate.
+            </p>
+            <div class="mt-auto pt-4 border-t border-slate-200/70 font-mono text-[11px] font-semibold text-sage tracking-wide">
+              PLEASE ARRANGE IN ADVANCE
+            </div>
+          </article>
+        </div>
+
+        <p class="mt-8 text-xs text-slate-500 leading-relaxed max-w-3xl">
+          Additional support such as GPU / power cart, flight training, and catering arrangements should be confirmed directly with airport management before being advertised as available services.
+        </p>
+      </div>
+    </section>
+
+    <!-- RUNWAY 02 / 20 TECHNICAL SECTION -->
+    <section id="runway" class="py-20 sm:py-28 bg-paper border-y border-slate-200/80">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8">
+        <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <!-- Diagram Card -->
+          <div class="lg:col-span-5 reveal">
+            <div class="bg-white rounded-3xl border border-slate-200 p-8 sm:p-10 shadow-xl shadow-tarmac/5 flex flex-col items-center justify-center">
+              <div class="w-full flex items-center justify-between text-[11px] font-mono text-slate-400 mb-4">
+                <span>FAA DIAGRAM · KBYL</span>
+                <span class="text-forest font-semibold">RWY 02 / 20</span>
+              </div>
+              <img
+                src="assets/image-06.png"
+                alt="Runway 02/20 airport diagram"
+                class="h-80 sm:h-96 w-auto object-contain"
+                onerror="this.onerror=null; this.src='https://placehold.co/320x460/FFFFFF/1D4637?text=RWY+02+%2F+20+Diagram';"
+              />
+            </div>
+          </div>
+
+          <!-- Specs Column -->
+          <div class="lg:col-span-7 reveal reveal-delay-1">
+            <div class="inline-flex items-center gap-2 text-xs font-mono font-semibold tracking-[0.16em] uppercase text-sage mb-3">
+              <span class="w-6 h-0.5 bg-amberrunway rounded-full"></span>
+              Runway 02 / 20
+            </div>
+            <h2 class="font-display font-extrabold text-4xl sm:text-5xl leading-[1.05] tracking-[-0.03em] text-tarmac">
+              Built for general aviation <span class="font-serif italic font-normal text-forest">access</span>.
+            </h2>
+            <p class="mt-4 text-slate-600 text-base leading-relaxed max-w-2xl">
+              KBYL features a 5,499-foot asphalt runway with medium-intensity edge lighting and published instrument approach information.
+            </p>
+
+            <div class="mt-8 grid sm:grid-cols-2 gap-4">
+              <div class="bg-white rounded-2xl border border-slate-200/90 p-5">
+                <span class="block font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-400">Dimensions</span>
+                <b class="block mt-1 font-mono text-lg font-bold text-tarmac">5,499 × 100 ft</b>
+              </div>
+              <div class="bg-white rounded-2xl border border-slate-200/90 p-5">
+                <span class="block font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-400">Surface</span>
+                <b class="block mt-1 font-mono text-lg font-bold text-tarmac">Asphalt · MIRL</b>
+              </div>
+              <div class="bg-white rounded-2xl border border-slate-200/90 p-5">
+                <span class="block font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-400">Runway Headings</span>
+                <b class="block mt-1 font-mono text-lg font-bold text-tarmac">023° / 203°</b>
+              </div>
+              <div class="bg-white rounded-2xl border border-slate-200/90 p-5">
+                <span class="block font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-400">Field Elevation</span>
+                <b class="block mt-1 font-mono text-lg font-bold text-tarmac">1,177 ft MSL</b>
+              </div>
+              <div class="bg-white rounded-2xl border border-slate-200/90 p-5 flex items-center justify-between">
+                <div>
+                  <span class="block font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-400">CTAF / UNICOM</span>
+                  <b class="block mt-1 font-mono text-lg font-bold text-tarmac">122.700 MHz</b>
+                </div>
+                <button type="button" onclick="copyText('122.700 MHz', 'CTAF copied!')" class="text-[11px] font-mono bg-paper hover:bg-tarmac hover:text-white px-2.5 py-1.5 rounded-lg transition">Copy</button>
+              </div>
+              <div class="bg-white rounded-2xl border border-slate-200/90 p-5 flex items-center justify-between">
+                <div>
+                  <span class="block font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-400">AWOS</span>
+                  <b class="block mt-1 font-mono text-lg font-bold text-tarmac">119.575 MHz</b>
+                </div>
+                <button type="button" onclick="copyText('119.575 MHz', 'AWOS copied!')" class="text-[11px] font-mono bg-paper hover:bg-tarmac hover:text-white px-2.5 py-1.5 rounded-lg transition">Copy</button>
+              </div>
+            </div>
+
+            <p class="mt-6 text-xs text-slate-500 leading-relaxed">
+              For operational planning, verify runway, approach, lighting, and airport details against current FAA publications and NOTAMs.
+            </p>
+            <a href="https://www.faa.gov/airports" target="_blank" rel="noopener" class="inline-flex items-center gap-2 mt-5 font-display font-bold text-xs tracking-[0.12em] uppercase text-forest hover:text-amberrunway underline underline-offset-4 transition">
+              FAA Airport Information ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPLORE THE REGION GALLERY (WITH LIGHTBOX) -->
+    <section id="visit" class="py-20 sm:py-28 bg-white">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 reveal">
+          <div>
+            <div class="inline-flex items-center gap-2 text-xs font-mono font-semibold tracking-[0.16em] uppercase text-sage mb-3">
+              <span class="w-6 h-0.5 bg-amberrunway rounded-full"></span>
+              A Little More to Explore
+            </div>
+            <h2 class="font-display font-extrabold text-4xl sm:text-5xl leading-[1.05] tracking-[-0.03em] text-tarmac">
+              Make time for the <span class="font-serif italic font-normal text-amberrunway">region</span>.
+            </h2>
+          </div>
+          <p class="text-slate-600 text-sm sm:text-base max-w-md leading-relaxed">
+            From local dining to scenic outdoor destinations like Cumberland Falls, southeastern Kentucky offers plenty of reasons to extend your visit. Click any photo to view closer.
+          </p>
+        </div>
+
+        <!-- Bento Photo Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-4 reveal reveal-delay-1">
+          <figure
+            onclick="openLightbox(this)"
+            class="lg:col-span-5 lg:row-span-2 relative rounded-2xl overflow-hidden cursor-pointer group min-h-[300px] lg:min-h-[520px] bg-slate-200"
+          >
+            <img
+              src="assets/image-13-cumberland-falls.jpg"
+              alt="Cumberland Falls surrounded by the wooded Kentucky landscape"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              onerror="this.onerror=null; this.src='https://placehold.co/700x800/1D4637/E8EFEA?text=Cumberland+Falls';"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent"></div>
+            <figcaption class="absolute bottom-0 left-0 right-0 p-6 text-white">
+              <span class="block font-mono text-[10px] uppercase tracking-widest text-amberlight mb-1">Outdoor Destination</span>
+              <span class="font-display font-bold text-xl">Cumberland Falls</span>
+            </figcaption>
+          </figure>
+
+          <figure
+            onclick="openLightbox(this)"
+            class="lg:col-span-4 relative rounded-2xl overflow-hidden cursor-pointer group h-60 lg:h-[252px] bg-slate-200"
+          >
+            <img
+              src="assets/image-11-local-bar.jpg"
+              alt="Local Williamsburg restaurant and bar interior"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              onerror="this.onerror=null; this.src='https://placehold.co/520x360/2B231E/F3A96B?text=Local+Dining';"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+            <figcaption class="absolute bottom-0 left-0 right-0 p-5 text-white">
+              <span class="block font-mono text-[10px] uppercase tracking-widest text-amberlight">Williamsburg</span>
+              <span class="font-display font-bold text-base">Local Dining &amp; Bar</span>
+            </figcaption>
+          </figure>
+
+          <figure
+            onclick="openLightbox(this)"
+            class="lg:col-span-3 relative rounded-2xl overflow-hidden cursor-pointer group h-60 lg:h-[252px] bg-slate-200"
+          >
+            <img
+              src="assets/image-12-local-patio.jpg"
+              alt="Outdoor patio dining in the Williamsburg area"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              onerror="this.onerror=null; this.src='https://placehold.co/420x360/2A3B31/E8EFEA?text=Patio+Dining';"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+            <figcaption class="absolute bottom-0 left-0 right-0 p-5 text-white">
+              <span class="block font-mono text-[10px] uppercase tracking-widest text-amberlight">Atmosphere</span>
+              <span class="font-display font-bold text-base">Patio Dining</span>
+            </figcaption>
+          </figure>
+
+          <figure
+            onclick="openLightbox(this)"
+            class="lg:col-span-3 relative rounded-2xl overflow-hidden cursor-pointer group h-60 lg:h-[252px] bg-slate-200"
+          >
+            <img
+              src="assets/image-07.jpg"
+              alt="Nearby hotel exterior"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              onerror="this.onerror=null; this.src='https://placehold.co/420x360/1D322C/E8EFEA?text=Nearby+Hotels';"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+            <figcaption class="absolute bottom-0 left-0 right-0 p-5 text-white">
+              <span class="block font-mono text-[10px] uppercase tracking-widest text-amberlight">Stay</span>
+              <span class="font-display font-bold text-base">Nearby Lodging</span>
+            </figcaption>
+          </figure>
+
+          <figure
+            onclick="openLightbox(this)"
+            class="lg:col-span-4 relative rounded-2xl overflow-hidden cursor-pointer group h-60 lg:h-[252px] bg-slate-200"
+          >
+            <img
+              src="assets/image-10-local-deli.jpg"
+              alt="Local deli counter serving food in Williamsburg area"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              onerror="this.onerror=null; this.src='https://placehold.co/520x360/3A2E25/F3A96B?text=Quick+Bites+%26+Deli';"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+            <figcaption class="absolute bottom-0 left-0 right-0 p-5 text-white">
+              <span class="block font-mono text-[10px] uppercase tracking-widest text-amberlight">Local Stops</span>
+              <span class="font-display font-bold text-base">Quick Bites &amp; Deli</span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <p class="mt-6 text-xs text-slate-500">
+          Dining, lodging, and destination photographs are supplied as local-area visitor inspiration. Confirm business details, hours, and availability before visiting.
+        </p>
+      </div>
+    </section>
+
+    <!-- HELPFUL STOPS AROUND WILLIAMSBURG -->
+    <section class="py-20 sm:py-28 bg-paper border-t border-slate-200/80">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8">
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-6 reveal">
+            <div class="inline-flex items-center gap-2 text-xs font-mono font-semibold tracking-[0.16em] uppercase text-sage mb-3">
+              <span class="w-6 h-0.5 bg-amberrunway rounded-full"></span>
+              Your Visit, Made Easier
+            </div>
+            <h2 class="font-display font-extrabold text-4xl sm:text-5xl leading-[1.05] tracking-[-0.03em] text-tarmac">
+              Helpful stops around <span class="font-serif italic font-normal text-forest">Williamsburg</span>.
+            </h2>
+            <p class="mt-4 text-slate-600 text-base leading-relaxed">
+              The airport provides quick access to the Williamsburg area, where visitors can find convenient places to stay, eat, and explore. A courtesy vehicle may be available by prior arrangement.
+            </p>
+
+            <div class="mt-8 grid sm:grid-cols-2 gap-4">
+              <div class="bg-white rounded-2xl border border-slate-200/90 p-4 shadow-sm hover:shadow-md transition">
+                <img
+                  src="assets/image-07.jpg"
+                  alt="Hotel exterior"
+                  class="w-full h-32 object-cover rounded-xl mb-3.5"
+                  onerror="this.onerror=null; this.src='https://placehold.co/400x200/1D4637/FFFFFF?text=Hotels+near+I-75';"
+                />
+                <h3 class="font-display font-bold text-base text-tarmac">Hotels near I-75</h3>
+                <p class="mt-1 text-xs text-slate-500 leading-relaxed">
+                  Hampton Inn, Holiday Inn Express, and Super 8 are among the nearby area options.
+                </p>
+              </div>
+              <div class="bg-white rounded-2xl border border-slate-200/90 p-4 shadow-sm hover:shadow-md transition">
+                <img
+                  src="assets/image-10-local-deli.jpg"
+                  alt="Local deli and quick-service food counter"
+                  class="w-full h-32 object-cover rounded-xl mb-3.5"
+                  onerror="this.onerror=null; this.src='https://placehold.co/400x200/D97736/FFFFFF?text=Local+Dining';"
+                />
+                <h3 class="font-display font-bold text-base text-tarmac">Local dining</h3>
+                <p class="mt-1 text-xs text-slate-500 leading-relaxed">
+                  Find casual food, coffee, and welcoming places to stop around Williamsburg.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6 reveal reveal-delay-1">
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl shadow-tarmac/10">
+              <img
+                src="assets/image-11-local-bar.jpg"
+                alt="Warmly lit local dining and bar interior"
+                class="w-full h-80 sm:h-[460px] object-cover"
+                onerror="this.onerror=null; this.src='https://placehold.co/720x520/261F1A/F3A96B?text=Williamsburg+Dining';"
+              />
+              <div class="absolute bottom-4 left-4 right-4 sm:right-auto bg-tarmac/85 backdrop-blur-md text-white px-5 py-3.5 rounded-2xl border border-white/10">
+                <div class="font-mono text-[10px] uppercase tracking-widest text-amberlight">Quick Access</div>
+                <div class="font-display font-semibold text-sm mt-0.5">Minutes from I-75 &amp; Downtown Williamsburg</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-20 sm:py-28 bg-tarmac aviation-grid text-white">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8">
+        <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          <div class="lg:col-span-5 reveal">
+            <div class="inline-flex items-center gap-2 text-xs font-mono font-semibold tracking-[0.16em] uppercase text-amberlight mb-3">
+              <span class="w-6 h-0.5 bg-amberlight rounded-full"></span>
+              Contact the Airport
+            </div>
+            <h2 class="font-display font-extrabold text-4xl sm:text-5xl leading-[1.05] tracking-[-0.03em]">
+              We look forward to <span class="font-serif italic font-normal text-amberlight">welcoming</span> you.
+            </h2>
+            <p class="mt-5 text-slate-300 text-base leading-relaxed">
+              Questions about fuel, hangar rentals, aircraft parking, or planning a visit? Contact airport management for assistance.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-3.5">
+              <a href="tel:+16065492688" class="inline-flex items-center gap-2.5 bg-amberrunway hover:bg-amberlight hover:text-tarmac text-white font-display font-bold text-xs tracking-[0.12em] uppercase px-6 py-4 rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-amberrunway/25">
+                Call (606) 549-2688
+              </a>
+              <a href="mailto:wwairport@att.net" class="inline-flex items-center gap-2.5 bg-white/10 hover:bg-white/20 text-white border border-white/20 font-display font-bold text-xs tracking-[0.12em] uppercase px-6 py-4 rounded-xl transition-all duration-200 hover:-translate-y-0.5">
+                Send an Email
+              </a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 reveal reveal-delay-1">
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+                <span class="block font-mono text-[10px] uppercase tracking-widest text-slate-400">Airport</span>
+                <b class="block mt-1.5 font-display text-base font-bold text-white">Williamsburg–Whitley County Airport</b>
+              </div>
+              <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+                <span class="block font-mono text-[10px] uppercase tracking-widest text-slate-400">Airport Manager</span>
+                <b class="block mt-1.5 font-display text-base font-bold text-white">Don Stricklin</b>
+              </div>
+              <div class="bg-white/5 border border-white/10 rounded-2xl p-5 flex items-start justify-between gap-2">
+                <div>
+                  <span class="block font-mono text-[10px] uppercase tracking-widest text-slate-400">Address</span>
+                  <b class="block mt-1.5 font-display text-base font-bold text-white leading-snug">1000 Aviation Boulevard<br />Williamsburg, KY 40769</b>
+                </div>
+                <button type="button" onclick="copyText('1000 Aviation Boulevard, Williamsburg, KY 40769', 'Address copied!')" class="text-[10px] font-mono bg-white/10 hover:bg-amberrunway text-slate-200 hover:text-white px-2.5 py-1 rounded-lg transition shrink-0">Copy</button>
+              </div>
+              <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+                <span class="block font-mono text-[10px] uppercase tracking-widest text-slate-400">Telephone</span>
+                <a href="tel:+16065492688" class="block mt-1.5 font-mono text-base font-bold text-amberlight hover:text-white transition">(606) 549-2688</a>
+              </div>
+              <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+                <span class="block font-mono text-[10px] uppercase tracking-widest text-slate-400">Email</span>
+                <a href="mailto:wwairport@att.net" class="block mt-1.5 font-mono text-base font-bold text-white hover:text-amberlight transition break-all">wwairport@att.net</a>
+              </div>
+              <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+                <span class="block font-mono text-[10px] uppercase tracking-widest text-slate-400">Terminal Access</span>
+                <b class="block mt-1.5 font-display text-base font-bold text-emerald-300">24-hour access reported</b>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#050807] text-slate-400 border-t border-white/10 py-7">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono">
+      <span>© Williamsburg–Whitley County Airport · KBYL</span>
+      <span>
+        Website concept by
+        <a href="https://creativetugs.com/" target="_blank" rel="noopener" class="text-white underline decoration-amberlight underline-offset-4 hover:text-amberlight transition">Creative Tugs</a>
+      </span>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX MODAL FOR GALLERY -->
+  <div id="lightbox" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-sm items-center justify-center p-4 sm:p-8" onclick="closeLightbox(event)">
+    <div class="relative max-w-4xl w-full bg-tarmac rounded-2xl overflow-hidden border border-white/15 shadow-2xl" onclick="event.stopPropagation()">
+      <button
+        type="button"
+        onclick="closeLightbox()"
+        aria-label="Close image preview"
+        class="absolute top-3 right-3 z-10 w-10 h-10 rounded-full bg-black/60 hover:bg-amberrunway text-white flex items-center justify-center transition"
+      >
+        ✕
+      </button>
+      <img id="lightbox-img" src="" alt="" class="w-full max-h-[75vh] object-contain bg-black" />
+      <div class="px-6 py-4 flex items-center justify-between gap-4 border-t border-white/10">
+        <span id="lightbox-caption" class="font-display font-semibold text-white text-sm sm:text-base"></span>
+        <span class="font-mono text-[11px] text-slate-400">KBYL Area Guide</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 pointer-events-none opacity-0 translate-y-3 transition-all duration-300">
+    <div class="bg-tarmac text-white border border-amberlight/40 px-4 py-3 rounded-xl shadow-2xl flex items-center gap-2.5 text-xs font-mono">
+      <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+      <span id="toast-message">Copied to clipboard</span>
+    </div>
+  </div>
+
+  <!-- INTERACTIVE JAVASCRIPT -->
+  <script>
+    /**
+     * 1. Live Zulu (UTC) Aviation Clock
+     */
+    function updateZuluClock() {
+      const now = new Date();
+      const hh = String(now.getUTCHours()).padStart(2, '0');
+      const mm = String(now.getUTCMinutes()).padStart(2, '0');
+      const ss = String(now.getUTCSeconds()).padStart(2, '0');
+      const formatted = `${hh}:${mm}:${ss}Z`;
+
+      const topEl = document.getElementById('zulu-clock-top');
+      const cardEl = document.getElementById('zulu-clock-card');
+      if (topEl) topEl.textContent = `UTC ${formatted}`;
+      if (cardEl) cardEl.textContent = `${hh}:${mm}:${ss} Z`;
+    }
+    updateZuluClock();
+    setInterval(updateZuluClock, 1000);
+
+    /**
+     * 2. Mobile Navigation Toggle
+     */
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+    const iconOpen = document.getElementById('menu-icon-open');
+    const iconClose = document.getElementById('menu-icon-close');
+
+    if (menuBtn && mobileNav) {
+      menuBtn.addEventListener('click', () => {
+        const isOpen = !mobileNav.classList.contains('hidden');
+        mobileNav.classList.toggle('hidden');
+        iconOpen.classList.toggle('hidden', !isOpen);
+        iconClose.classList.toggle('hidden', isOpen);
+        menuBtn.setAttribute('aria-expanded', String(!isOpen));
+      });
+
+      document.querySelectorAll('.mobile-link').forEach((link) => {
+        link.addEventListener('click', () => {
+          mobileNav.classList.add('hidden');
+          iconOpen.classList.remove('hidden');
+          iconClose.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    /**
+     * 3. Interactive Temperature Unit Toggle (°F / °C)
+     */
+    function setTempUnit(unit) {
+      const tempEl = document.getElementById('weather-temp');
+      const dewEl = document.getElementById('weather-dew');
+      const btnF = document.getElementById('btn-unit-f');
+      const btnC = document.getElementById('btn-unit-c');
+
+      if (unit === 'C') {
+        tempEl.textContent = '20.2°C';
+        dewEl.textContent = 'Dew Pt 12.0°C';
+        btnC.className = 'px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold bg-tarmac text-white transition';
+        btnF.className = 'px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold text-slate-600 hover:text-tarmac transition';
+      } else {
+        tempEl.textContent = '68°F';
+        dewEl.textContent = 'Dew Pt 54°F';
+        btnF.className = 'px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold bg-tarmac text-white transition';
+        btnC.className = 'px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold text-slate-600 hover:text-tarmac transition';
+      }
+    }
+
+    /**
+     * 4. Copy to Clipboard with Toast Feedback (iFrame-safe)
+     */
+    let toastTimer;
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toast-message');
+      if (!toast || !toastMsg) return;
+      toastMsg.textContent = msg;
+      toast.classList.remove('opacity-0', 'translate-y-3');
+      toast.classList.add('opacity-100', 'translate-y-0');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.remove('opacity-100', 'translate-y-0');
+        toast.classList.add('opacity-0', 'translate-y-3');
+      }, 2400);
+    }
+
+    function copyText(text, successMessage) {
+      try {
+        const tempInput = document.createElement('textarea');
+        tempInput.value = text.trim();
+        tempInput.setAttribute('readonly', '');
+        tempInput.style.position = 'absolute';
+        tempInput.style.left = '-9999px';
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+        showToast(successMessage || 'Copied!');
+      } catch (err) {
+        showToast('Unable to copy automatically');
+      }
+    }
+
+    /**
+     * 5. Gallery Lightbox Modal
+     */
+    function openLightbox(figureEl) {
+      const img = figureEl.querySelector('img');
+      const caption = figureEl.querySelector('figcaption');
+      const lightbox = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lightbox-img');
+      const lbCap = document.getElementById('lightbox-caption');
+
+      if (!img || !lightbox) return;
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lbCap.textContent = caption ? caption.innerText.replace(/\n/g, ' · ') : img.alt;
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById('lightbox');
+      if (!lightbox) return;
+      lightbox.classList.add('hidden');
+      lightbox.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    /**
+     * 6. Scroll Reveal Animations via IntersectionObserver
+     */
+    const revealEls = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+      );
+      revealEls.forEach((el) => observer.observe(el));
+    } else {
+      revealEls.forEach((el) => el.classList.add('visible'));
+    }
+  </script>
+</body>
+</html>
